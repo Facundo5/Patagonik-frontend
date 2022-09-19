@@ -1,0 +1,82 @@
+@import url('./../../../../node_modules/font-awesome/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+.pie-pagina{
+  width: 100%;
+  background-color: #1CCC62;
+}
+.pie-pagina .grupo-1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+
+}
+.pie-pagina .grupo-1 figure img{
+  width: 170px;
+}
+.pie-pagina .grupo-1 .box h2 {
+  font-size: 20px;
+}
+.pie-pagina .grupo-1 .box1 h2 {
+  font-size: 20px;
+}
+.pie-pagina .grupo-1 .box2 h2 {
+  font-size: 20px;
+}
+.pie-pagina .grupo-1 .box1 a{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 50px;
+}
+.pie-pagina .grupo-1 .box2 a{
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  border-left: solid #000;
+  padding-left: 10px;
+}
+.pie-pagina .grupo-2{
+  text-align: center;
+  background-color: #1CCC50;
+  padding: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: black;
+  margin-right: 10px;
+  background-color: #1CCC75;
+  text-align: center;
+  transition: all 300ms ease;
+  margin-top: 10px;
+  border-radius: 2px;
+  border: 1px solid #000;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover{
+  color: #78c6a3;
+  border: 1px solid #78c6a3;
+}
+@media screen and (max-width:800px){
+  .pie-pagina .grupo-1{
+    width: 50%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 45px 0px;
+
+  }
+}
