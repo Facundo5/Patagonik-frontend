@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+.logo{
+  margin-right: 100px;
+}
+
+.search{
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+  top: .5px;
+  }
+
+  .search input{
+
+  width: 300px;
+  height: 40px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4;
+
+
+  }
+
+  .search .fa-search{
+
+  position: absolute;
+  top: 14px;
+  left: 15px;
+
+  }
+
+.nav-link {
+  align-items:center;
+  height: 40px;
+  color: #000;
+  font-size: 17px;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+/* An optional height of the navbar AFTER scroll */
+.navbar.navbar-scroll.navbar-scrolled {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.navbar{
+  background-color: #1CCC62 !important;
+}
