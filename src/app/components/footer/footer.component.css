@@ -8,7 +8,7 @@
 }
 .pie-pagina{
   width: 100%;
-  background-color: #1CCC62;
+  background-color: #9CAFC0;
 }
 .pie-pagina .grupo-1{
   width: 100%;
@@ -48,7 +48,7 @@
 }
 .pie-pagina .grupo-2{
   text-align: center;
-  background-color: #1CCC50;
+  background-color: #88E6E6;
   padding: 10px;
 }
 .pie-pagina .grupo-1 .red-social a{
@@ -59,7 +59,7 @@
   line-height: 45px;
   color: black;
   margin-right: 10px;
-  background-color: #1CCC75;
+  background-color: #ffff;
   text-align: center;
   transition: all 300ms ease;
   margin-top: 10px;

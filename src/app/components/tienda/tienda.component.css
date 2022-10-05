@@ -1,3 +1,41 @@
 .carousel{
   top: 18px;
 }
+.btntalle{
+  border-color: black;
+  border-radius: 100%;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 10px;
+}
+.btnInfo {
+  margin-top: 10px;
+}
+.categorias {
+  background-color: #FFFF;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.titulocategoria {
+  font-size: 20px;
+}
+.titlefilter {
+  font-size: 25px;
+  margin-top: 10px;
+}
+#categoryItem {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+#categoryItemtalle {
+  margin-left: 4px;
+  display: flex;
+}
+.card {
+  margin-bottom: 20px;
+}
