@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NosotrosComponent } from './components/nosotros/nosotros.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
   },
   {
     path: 'product', component: ProductComponent
+  },
+  {
+    path: "nosotros", component: NosotrosComponent
   }
 ];
 

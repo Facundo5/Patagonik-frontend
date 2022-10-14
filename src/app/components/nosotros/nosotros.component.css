@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+.principal{
+  text-align: center;
+}
+
+#logo{
+  margin-right: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.featurette{
+  margin-left: 80px;
+  margin-right: 60px;
+  align-content: center;
+}
+
+.py-5{
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.icon-outlined-primary{
+  border-color: #4fbfa8;
+  color: #4fbfa8;
+}
+
+.icon-outlined.icon-thin {
+  border-width: 1px;
+}
+
+.icon-outlined {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  border-radius: 50%;
+  border: 2px solid;
+  transition: all 0.3s;
+}
+
