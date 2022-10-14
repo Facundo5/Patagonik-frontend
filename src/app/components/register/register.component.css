@@ -1,0 +1,13 @@
+body {
+  background: #D9D9D9;
+}
+.bg {
+  background-image: url(./../../../assets/IMG-login-register.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+.container {
+  justify-content: center;
+  margin-bottom: 50px;
+}

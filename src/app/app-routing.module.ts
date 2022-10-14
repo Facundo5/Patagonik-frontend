@@ -1,7 +1,33 @@
-import { NgModule } from '@angular/core';
+import { ProductComponent } from './components/product/product.component';
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { TiendaComponent } from './components/tienda/tienda.component';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path:'', redirectTo:'tienda', pathMatch: 'full'
+  },
+  {
+    path:'tienda', component: TiendaComponent
+  },
+  {
+    path:'login', component: LoginComponent
+  },
+  {
+    path:'login/register', redirectTo:'register', pathMatch: 'full'
+  },
+  {
+    path:'register/login', redirectTo:'login', pathMatch: 'full'
+  },
+  {
+    path:'register', component: RegisterComponent
+  },
+  {
+    path: 'product', component: ProductComponent
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

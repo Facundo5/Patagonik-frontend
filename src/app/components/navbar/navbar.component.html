@@ -1,6 +1,6 @@
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg">
 
   <!-- Container wrapper -->
   <div class="container">
@@ -27,7 +27,7 @@
       <!-- Left links -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active d-flex text-center" aria-current="page" href="#"><span class="small">Inicio</span></a>
+          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="tienda"><span class="small">Inicio</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link active d-flex  text-center" aria-current="page" href="#"><span class="small">Quienes Somos</span></a>
@@ -46,25 +46,7 @@
           ><i class="fa-solid fa-bag-shopping"></i>
           </a>
         </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle align-items-center "
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          ><i class="fa-solid fa-user"></i>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li>
-              <a class="dropdown-item" href="#">Mi Perfil</a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">Cerrar Sesión</a>
-            </li>
-          </ul>
-        </li>
+        <li class="nav-item"><a routerLink="login">Ingresar</a></li>
       </ul>
       <!-- Left links -->
     </div>
