@@ -29,6 +29,9 @@ const routes: Routes = [
     path: 'product', component: ProductComponent
   },
   {
+    path: 'tienda/product', redirectTo: 'product', pathMatch: 'full'
+  },
+  {
     path: "nosotros", component: NosotrosComponent
   }
 ];
