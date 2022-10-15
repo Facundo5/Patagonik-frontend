@@ -5,6 +5,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,9 @@ const routes: Routes = [
   },
   {
     path: "nosotros", component: NosotrosComponent
+  },
+  {
+    path: "carrito", component: CarritoComponent
   }
 ];
 
