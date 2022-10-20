@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms'
 import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { AccountrecoverycheckedComponent } from './components/accountrecoverychecked/accountrecoverychecked.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component'
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { UserprofileComponent } from './components/userprofile/userprofile.compo
     CarritoComponent,
     AccountrecoveryComponent,
     AccountrecoverycheckedComponent,
-    UserprofileComponent
+    UserprofileComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
