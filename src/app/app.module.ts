@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductComponent } from './components/product/product.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     PageNotFoundComponent,
     ProductComponent,
     NosotrosComponent,
-    CarritoComponent
+    CarritoComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
