@@ -1,3 +1,6 @@
+.carousel {
+box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.273);
+}
 .btntalle{
   border-color: black;
   border-radius: 100%;
@@ -35,4 +38,9 @@ a {
 }
 .card {
   margin-bottom: 20px;
+}
+.options{
+  display: flex;
+  justify-content: right;
+  display: right;
 }

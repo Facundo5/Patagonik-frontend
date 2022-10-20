@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {Routes, RouterModule} from '@angular/router'
+import { Routes, RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -12,6 +12,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { ProductComponent } from './components/product/product.component';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
+import { AccountrecoveryComponent } from './components/accountrecovery/accountrecovery.component';
+import { ReactiveFormsModule } from '@angular/forms'
+import { ErrorTailorModule } from '@ngneat/error-tailor';
+import { AccountrecoverycheckedComponent } from './components/accountrecoverychecked/accountrecoverychecked.component';
+import { UserprofileComponent } from './components/userprofile/userprofile.component'
 
 @NgModule({
   declarations: [
@@ -24,13 +29,27 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     PageNotFoundComponent,
     ProductComponent,
     NosotrosComponent,
-    CarritoComponent
+    CarritoComponent,
+    AccountrecoveryComponent,
+    AccountrecoverycheckedComponent,
+    UserprofileComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    ErrorTailorModule.forRoot({
+      errors: {
+        useValue: {
+          required: 'Este campo es requerido',
+          minlength: ({ requiredLength, actualLength }) =>
+                      `Se esperaban ${requiredLength} pero solo ingresaste ${actualLength}`,
+          invalidAddress: error => `El formato del correo no es el correcto`
+        }
+      }
+    })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: []
 })
 export class AppModule { }

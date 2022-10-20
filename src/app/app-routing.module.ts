@@ -1,3 +1,6 @@
+import { UserprofileComponent } from './components/userprofile/userprofile.component';
+import { AccountrecoverycheckedComponent } from './components/accountrecoverychecked/accountrecoverychecked.component';
+import { AccountrecoveryComponent } from './components/accountrecovery/accountrecovery.component';
 import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
@@ -37,6 +40,17 @@ const routes: Routes = [
   },
   {
     path: "carrito", component: CarritoComponent
+  },
+  {
+    path: 'recoveryaccount', component: AccountrecoveryComponent
+  },
+  {
+  path: 'login/recoveryaccount', redirectTo: 'recoveryaccount', pathMatch: 'full'
+  },
+  {
+  path: 'recoveryaccountchecked', component: AccountrecoverycheckedComponent
+  }, {
+    path: 'userprofile', component: UserprofileComponent
   }
 ];
 

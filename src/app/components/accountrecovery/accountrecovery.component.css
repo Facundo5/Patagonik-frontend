@@ -1,0 +1,58 @@
+body {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  background-color: #D9D9D9;
+  font-family: sans-serif;
+}
+.boxlogin {
+  background-color: #FFFF;
+  padding: 100px;
+  border-radius: 20px;
+  box-shadow: -1px -1px 30px 0px rgba(0,0,0,0.51);
+-webkit-box-shadow: -1px -1px 30px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: -1px -1px 30px 0px rgba(0,0,0,0.51);
+}
+#email {
+  border: none;
+  background-color: #D9D9D9;
+  border-radius: 2px;
+  margin: 2px;
+  padding: 5px;
+}
+.boton {
+  display: block;
+  width: 150px;
+  height: 40px;
+  outline: none;
+  border: 1px solid rgb(0,141,235);
+  background-color: transparent;
+  border-radius: 6px;
+  color: rgb(0, 141,235);
+  cursor:pointer;
+  margin: 10px auto;
+  transition: all .25s;
+  z-index: 1;
+  position: relative;
+  text-transform: uppercase;
+}
+.boton:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom:0;
+  border-radius: 6px;
+  background-image: linear-gradient(to right,
+  rgb(23,228,243), rgb(0,141,235));
+  transition: all .25s;
+  z-index: -1;
+}
+.boton:hover {
+  border: 1px solid transparent;
+  color: #ffff;
+}
+.boton:hover:before {
+  height: 100%;
+}
