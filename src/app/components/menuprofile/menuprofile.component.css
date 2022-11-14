@@ -1,0 +1,23 @@
+.profilelink {
+  text-decoration: none;
+  color: #d8f3dc;
+}
+.menulateral {
+  background-color: #006466;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 0 20px 20px 0px;
+}
+.profileheader{
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffff;
+}
+.bodylinks{
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.profilelink:hover{
+  color: #FFFF;
+}

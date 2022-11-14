@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
-import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductComponent } from './components/product/product.component';
@@ -18,6 +17,10 @@ import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { AccountrecoverycheckedComponent } from './components/accountrecoverychecked/accountrecoverychecked.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component'
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { UserpurchasesComponent } from './components/userpurchases/userpurchases.component';
+import { MenuprofileComponent } from './components/menuprofile/menuprofile.component';
+import { LoginComponent } from './components/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,19 +37,22 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     AccountrecoveryComponent,
     AccountrecoverycheckedComponent,
     UserprofileComponent,
-    ContactoComponent
+    ContactoComponent,
+    UserpurchasesComponent,
+    MenuprofileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ErrorTailorModule.forRoot({
       errors: {
         useValue: {
           required: 'Este campo es requerido',
           minlength: ({ requiredLength, actualLength }) =>
-                      `Se esperaban ${requiredLength} pero solo ingresaste ${actualLength}`,
-          invalidAddress: error => `El formato del correo no es el correcto`
+                      `Se espereban ${requiredLength} caracteres,  pero enviaste ${actualLength}`,
+          email: error => `Email invalido`
         }
       }
     })

@@ -1,40 +1,28 @@
-.profilelink {
-  text-decoration: none;
-  color: black;
-}
-.userimg {
+.imgexample {
+  width: 200px;
   border-radius: 100%;
 }
-.titleuser {
+.titlehistorybuy {
+  text-align: center;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.titleitem {
+  text-align: center;
+  font-size: 25px;
+}
+.descriptionitem {
   margin-top: auto;
   margin-bottom: auto;
 }
-.profileheader {
-  background-color: #FFFF;
-  margin-top: 10px;
-  border-radius: 20px;
-  padding: 15px;
-}
-.bodylinks {
-  background-color: #FFFF;
-  margin: 20px;
-  padding-left: 20px;
+.item {
   padding-top: 20px;
-  padding-bottom: 20px;
-  border-radius: 20px;
-}
-
-.userdetailsheader {
-  background-color: #FFFF;
-  margin-top: 10px;
-  border-radius: 20px;
-  padding: 15px;
-}
-
-.userdetailsbody {
+  border-radius: 10px;
   background-color: #FFFF;
 }
-.imgexample {
-  width: 150px;
-  border-radius: 20px;
+.envio {
+  font-size: 20px;
+}
+.divimg {
+  text-align: center;
 }

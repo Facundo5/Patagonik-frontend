@@ -14,6 +14,6 @@ body {
   .passvisibility {
     position: relative;
   }
-.form-control {
-  
+input.ng-invalid.ng-touched{
+  border: solid #dc3545;
 }
