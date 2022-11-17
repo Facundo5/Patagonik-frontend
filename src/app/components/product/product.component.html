@@ -1,86 +1,149 @@
+<div class="body d-flex py-3">
+  <div class="container-xxl">
+    <br>
 
-
-<div class="container"><!--Contenedor central del el cuerpo-->
-  <div class="row details-img"> <!--Primera fila de datos-->
-    <div class="col-7 box-images">
-      <div class="row">
-
-          <!--Imagenes laterales PEQUEÑAS-->
-
-        <div class="col-2 box-images-small">
-          <div class="row img-small"><a><img src="./../../../assets/exampleimgsmall.jpg" width="100px"></a></div>
-          <div class="row img-small"><a><img src="./../../../assets/exampleimgsmall.jpg" width="100px"></a></div>
-          <div class="row img-small"><a><img src="./../../../assets/exampleimgsmall.jpg" width="100px"></a></div>
-          <div class="row img-small"><a><img src="./../../../assets/exampleimgsmall.jpg" width="100px"></a></div>
-          <div class="row img-small"><a><img src="./../../../assets/exampleimgsmall.jpg" width="100px"></a></div>
-        </div>
-
-        <!--Imagen principal GRANDE-->
-
-        <div class="col-10 box-image-big">
-          <img src="./../../../assets/exampleimgsmall.jpg" class="img-big">
-        </div>
+      <div class="row g-3 mb-3">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="product-details">
+                          <div class="row align-items-center">
+                            <!--Imágenes -->
+                              <div class="col-lg-6">
+                                  <div class="product-details-image mt-50">
+                                    <!-- Imagenes Laterales-->
+                                      <div class="product-thumb-image">
+                                          <div class="product-thumb-image-active nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                              <a class="single-thumb" id="v-pills-one-tab" data-bs-toggle="pill" href="#v-pills-one" role="button" aria-controls="v-pills-one" aria-selected="false" tabindex="-1">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-thumb" id="v-pills-two-tab" data-bs-toggle="pill" href="#v-pills-two" role="button" aria-controls="v-pills-two" aria-selected="false" tabindex="-1">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-thumb active show" aria-current="page" id="v-pills-three-tab" data-bs-toggle="pill" role="button" href="#v-pills-three" aria-controls="v-pills-three" aria-selected="false" tabindex="-1">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-thumb" id="v-pills-four-tab" data-bs-toggle="pill" href="#v-pills-four" role="button" aria-controls="v-pills-four" aria-selected="true" tabindex="-1">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-thumb" id="v-pills-five-tab" data-bs-toggle="pill" href="#v-pills-five" role="button" aria-controls="v-pills-five" aria-selected="false" tabindex="-1">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                          </div>
+                                      </div>
+                                      <!--Imágen Principal -->
+                                      <div class="product-image">
+                                          <div class="product-image-active tab-content" id="v-pills-tabContent">
+                                              <a class="single-image tab-pane fade" id="v-pills-one" role="tabpanel" aria-labelledby="v-pills-one-tab">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-image tab-pane fade" id="v-pills-two" role="tabpanel" aria-labelledby="v-pills-two-tab">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-image tab-pane fade active show" id="v-pills-three" role="tabpanel" aria-labelledby="v-pills-three-tab">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-image tab-pane fade" id="v-pills-four" role="tabpanel" aria-labelledby="v-pills-four-tab">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                              <a class="single-image tab-pane fade" id="v-pills-five" role="tabpanel" aria-labelledby="v-pills-five-tab">
+                                                  <img src="./../../../assets/exampleimgsmall.jpg" alt="">
+                                              </a>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <!--Info Producto -->
+                              <div class="col-lg-6">
+                                  <div class="product-details-content mt-45">
+                                      <!--Titulo -->
+                                      <h2 class="fw-bold fs-4">Nike</h2>
+                                      <!--Sub titulo -->
+                                      <h2 class="title-product">AIR FORCE LPM</h2>
+                                      <!--Colores -->
+                                      <div class="product-select-wrapper flex-wrap">
+                                          <div class="select-item">
+                                              <h6 class="select-title fw-bold">Seleccionar Color</h6>
+                                              <ul class="color-select" id="select-color-1">
+                                                  <li style="background-color: #EFEFEF;" class="active"></li>
+                                                  <li style="background-color: #FAE5EC;" class=""></li>
+                                                  <li style="background-color: #4C4C4C;" class=""></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                      <!--Precio -->
+                                      <div class="product-price">
+                                          <h6 class="price-title fw-bold">Precio</h6>
+                                          <p class="sale-price">$ 20000 ARS</p>
+                                      </div>
+                                      <!--Acotacion -->
+                                      <p>Aceptamos Mercado Pago</p>
+                                      <!--Cantidad -->
+                                      <div class="product-btn mb-5">
+                                          <div class="d-flex flex-wrap">
+                                              <div class="mt-2 mt-sm-0  me-1">
+                                                  <div class="input-group">
+                                                      <input type="number" class="form-control" placeholder="1" min="1" max="5">
+                                                      <span class="input-group-text"><i class="fa fa-sort"></i></span>
+                                                  </div>
+                                              </div>
+                                              <!--Botones -->
+                                              <button class="btn btn-primary mx-1 mt-2  mt-sm-0"><i class="fa-solid fa-bag-shopping"></i>Añadir al Carrito</button>
+                                              <button class="btn btn-primary mx-1 mt-2 mt-sm-0 w-sm-100"><i class="fa fa-shopping-cart me-1"></i>Comprar</button>
+                                              <!--End Botones -->
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-    
-    <!--Informacion de el producto-->
 
-    <div class="col-4 details-information">
-      <h6 style="color: #808080;">NIKE</h6>
-      <h2 class="title-product">AIR FORCE LPM</h2>
-      <a href="#" id="categoryItemtalle" category="34">34</a>
-      <a href="#" id="categoryItemtalle" category="35">35</a>
-      <a href="#" id="categoryItemtalle" category="36">36</a>
-      <a href="#" id="categoryItemtalle" category="37">37</a>
-      <a href="#" id="categoryItemtalle" category="38">38</a>
-      <a href="#" id="categoryItemtalle" category="39">39</a>
-      <a href="#" id="categoryItemtalle" category="40">40</a>
-      <a href="#" id="categoryItemtalle" category="41">41</a>
-      <a href="#" id="categoryItemtalle" category="42">42</a>
-      <a href="#" id="categoryItemtalle" category="43">43</a>
-      <h5>$21030</h5>
-      <div><span>Aceptamos todas las tarjetas</span></div>
-      <div class="row">
-        <div class="col-9">
-          <button class="btn buy col-sm-12 col-xs-12 m-1 m">COMPRAR</button>
-        </div>
-        <div class="col-3">
-          <i class="fa-solid fa-cart-shopping mx-auto"></i>
-        </div>
-      </div>
-    </div>
-  </div>
+      <!--Tabla Inferior -->
+      <div class="row g-3 mb-3">
+          <div class="col-md-12">
+              <div class="card">
+                <!--Descripcion del producto -->
+                  <div class="card-body">
+                      <ul class="nav nav-tabs tab-body-header rounded  d-inline-flex" role="tablist">
+                          <li class="nav-item" role="presentation"><a class="nav-link active" data-bs-toggle="tab" href="#descriptions" role="tab" aria-selected="true">Descripción</a></li>
+                          <li class="nav-item" role="presentation"><a class="nav-link" data-bs-toggle="tab" href="#about" role="tab" aria-selected="false" tabindex="-1">Detalles</a></li>
+                      </ul>
+                  </div>
+                  <!--Texto descripcion -->
+                  <div class="tab-content">
+                      <div class="tab-pane fade active show" id="descriptions" role="tabpanel">
+                          <div class="card-body">
+                              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse aliquet sem in erat volutpat, nec sollicitudin erat varius. Sed feugiat, leo varius facilisis sagittis, lorem magna cursus tortor, molestie venenatis odio nunc quis eros.Morbi volutpat dui vitae efficitur posuere.</p>
+                              <p>Donec ut libero imperdiet, eleifend ipsum vitae, laoreet nisl. Morbi volutpat dui vitae efficitur posuere. Pellentesque mi libero, dapibus ut tellus eu, volutpat viverra magna. Phasellus vitae erat porta, condimentum enim ac, luctus dui. Fusce dignissim, neque quis aliquet posuere, ante tortor lobortis eros, et facilisis dolor ipsum malesuada ante.</p>
+                          </div>
+                      </div>
+                      <!--Caracteristicas Producto -->
+                      <div class="tab-pane fade" id="about" role="tabpanel">
+                          <div class="card-body">
+                            <div class="col-6">
+                              <div class="row">
+                                <div class="col-6">
+                                  <div class="row features"><span><b>Tipo</b>:&nbsp;Zapatilla</span></div>
+                                  <div class="row features"><span><b>Marca</b>:&nbsp;Nike</span></div>
+                                  <div class="row features"><span><b>Modelo</b>:&nbsp;Air force</span></div>
+                                </div>
+                                <div class="col-6 features">
+                                  <div class="row features"><span><b>Material</b>:&nbsp;Lona</span></div>
+                                  <div class="row features"><span><b>Exclusivo</b>:&nbsp;No</span></div>
+                                  <div class="row features"><span><b>Envio gratis</b>:&nbsp;No</span></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div><!-- Row end  -->
 
-  <!--Detalles completo del producto, descripcion y caracteristicas-->
-
-  <div class="row details-information-complete">
-    <div class="col-6">
-      <div class="col-7">
-        <span><b>Descripcion</b></span>
-      </div>
-      <br>
-      <div class="col-12">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quas quidem odio, suscipit velit tempora ex
-          voluptas quos nostrum numquam illum vel vero quis, quod totam porro. Voluptatem, nam molestiae.
-          Voluptates voluptatum iste modi, omnis commodi quidem laboriosam numquam libero, recusandae, iusto tempora
-          quam sapiente eum temporibus nihil nostrum quasi nam! Dignissimos at, ducimus voluptatem dolores dolorum
-          doloribus consequuntur repellendus.
-          magnam blanditiis ab nobis.</p>
-      </div>
-    </div>
-    <div class="col-6">
-      <div class="row">
-        <div class="col-6">
-          <div class="row features"><span><b>Tipo</b>:&nbsp;Zapatilla</span></div>
-          <div class="row features"><span><b>Marca</b>:&nbsp;Nike</span></div>
-          <div class="row features"><span><b>Modelo</b>:&nbsp;Air force</span></div>
-        </div>
-        <div class="col-6 features">
-          <div class="row features"><span><b>Material</b>:&nbsp;Lona</span></div>
-          <div class="row features"><span><b>Exclusivo</b>:&nbsp;No</span></div>
-          <div class="row features"><span><b>Envio gratis</b>:&nbsp;No</span></div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
