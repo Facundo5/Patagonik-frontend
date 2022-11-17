@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-
+/*Logo Tienda*/
 .logo{
   margin-right: 100px;
 }
 
+/*Buscador*/
 .search{
   position: relative;
   box-shadow: 0 0 40px rgba(51, 51, 51, .1);
@@ -28,6 +29,8 @@
   left: 15px;
 
   }
+
+/*Botones Pagination*/
 .nav-link {
   align-items:center;
   height: 40px;

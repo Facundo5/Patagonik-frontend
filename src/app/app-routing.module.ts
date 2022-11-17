@@ -10,6 +10,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
+import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
+
+
 
 const routes: Routes = [
   {
@@ -55,6 +61,18 @@ const routes: Routes = [
   },
   {
     path: "contacto", component: ContactoComponent
+  },
+  {
+    path: 'faq', component: FaqComponent
+  },
+  {
+    path: 'admin-p', component: AdminProductsComponent
+  },
+  {
+    path: 'admin-add', component: AdminAddProductsComponent
+  },
+  {
+    path: 'admin-c', component: AdminClientsComponent
   }
 ];
 

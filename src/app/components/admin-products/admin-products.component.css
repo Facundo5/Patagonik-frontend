@@ -1,0 +1,148 @@
+/*Estilos Generales*/
+.card .card-header{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: 70px;
+  padding: 0 2.25rem;
+}
+
+/*Estilos de navegador*/
+.nav-borders .nav-link.active {
+  color: #0061f2;
+  border-bottom-color: #0061f2;
+}
+
+.nav-borders .nav-link {
+  color: #69707a;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/*Icono Buscador*/
+.svg-icon{
+  line-height: 1;
+  color: #000;
+}
+
+.ms-4{
+  margin-left: 1rem !important;
+}
+
+.position-absolute{
+  position: absolute !important;
+}
+
+.ps-14{
+  padding-left: 3.5rem !important;
+}
+
+.py-5{
+  padding-top: 1.25rem !important;
+  padding-bottom: 1.25rem !important;
+}
+
+/*Imagen Producto*/
+.avatar {
+  font-size: 1rem;
+  display: inline-flex;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  border-radius: 50%;
+  background-color: #adb5bd;
+  align-items: center;
+  justify-content: center;
+}
+
+/*background general*/
+body{
+  background-color: #D9D9D9;
+}
+
+/*Imagen Producto*/
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.avatar-sm {
+  font-size: .875rem;
+  width: 36px;
+  height: 36px;
+}
+
+.avatar-group .avatar {
+  position: relative;
+  z-index: 2;
+  border: 2px solid #fff;
+}
+
+.avatar-group .avatar:hover {
+  z-index: 3;
+}
+
+.avatar-group .avatar + .avatar {
+  margin-left: -1rem;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+/*Tamaño texto*/
+.text-sm {
+  font-size: .875rem !important;
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.media-body {
+  flex: 1 1;
+}
+
+/*Lista de acciones (editar y borrar)*/
+.action-list{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.action-list li{
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.action-list li a{
+  color: rgb(38, 0, 250);
+  font-size: 18px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0s;
+}
+
+.action-list li a:after{
+  content: '';
+  height: 15px;
+  width: 15px;
+  padding: 0;
+  border-radius: 0;
+  transform: translateX(-50%) rotate(45deg);
+  top: -18px;
+  z-index: -1;
+}

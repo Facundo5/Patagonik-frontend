@@ -21,6 +21,10 @@ import { UserpurchasesComponent } from './components/userpurchases/userpurchases
 import { MenuprofileComponent } from './components/menuprofile/menuprofile.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
+import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
+import { AdminProductsComponent } from './components/admin-products/admin-products.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +43,11 @@ import { HttpClientModule } from '@angular/common/http';
     UserprofileComponent,
     ContactoComponent,
     UserpurchasesComponent,
-    MenuprofileComponent
+    MenuprofileComponent,
+    AdminClientsComponent,
+    AdminAddProductsComponent,
+    AdminProductsComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,

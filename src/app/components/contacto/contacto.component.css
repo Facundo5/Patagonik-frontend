@@ -1,3 +1,4 @@
+/*Estilos generales*/
 body{
   font-size: 16px;
   line-height: 1.8;
@@ -10,6 +11,7 @@ body{
   display: block;
 }
 
+/*Formulario Completo*/
 .ftco-section{
   padding: 7em 0;
 }
@@ -22,6 +24,7 @@ body{
   margin-left: auto;
 }
 
+/*Alineacion de elementos*/
 .justify-content-center{
   -webkit-box-pack: center !important;
   justify-content: center !important;
@@ -42,11 +45,13 @@ body{
   margin-bottom: 3rem !important;
 }
 
+/*Titulo cabecera*/
 .heading-section{
   font-size: 28px;
   color: #000;
 }
 
+/*Estilos letras*/
 h1, h2, h3, h4, h5{
   line-height: 1.5;
   font-weight: 400;
@@ -65,6 +70,7 @@ h1, h2, h3, h4, h5{
   margin-left: 0;
 }
 
+/*Alinear formulario a la izquierda*/
 .align-items-stretch{
   -webkit-box-align: stretch !important;
   align-items: stretch !important;
@@ -74,6 +80,7 @@ h1, h2, h3, h4, h5{
   display: flex !important;
 }
 
+/*Fondo del formulario camuflado con la página*/
 .contact-wrap{
   background: #D9D9D9;
 }
@@ -86,6 +93,7 @@ h3{
   font-size: 1.75rem;
 }
 
+/*Formulario Contacto*/
 .form-group{
   margin-bottom: 1rem;
 }
@@ -103,6 +111,7 @@ h3{
   border: 1px solid rgb(0, 0, 0,.1);
 }
 
+/*Boton de envio*/
 .btn .btn-primary{
   background: #1089ff !important;
   border-color: #1089ff !important;
@@ -124,6 +133,7 @@ h3{
   transition: .3s;
 }
 
+/*Informacion del comerio*/
 .info-wrap{
   margin-top: -20px;
   margin-bottom: -20px;
@@ -133,7 +143,7 @@ h3{
 .info-wrap h3{
   color: #fff;
 }
-
+/*Fondo*/
 .info-wrap .dbox{
   width: 100%;
   color: rgba(255, 255, 255, .8);
@@ -192,3 +202,5 @@ textarea.form-control{
   height: inherit !important;
   height: auto;
 }
+
+/*Fin de Info del comercio*/
