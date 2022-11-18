@@ -25,6 +25,7 @@ import { AdminClientsComponent } from './components/admin-clients/admin-clients.
 import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { FaqComponent } from './components/faq/faq.component';
     AdminClientsComponent,
     AdminAddProductsComponent,
     AdminProductsComponent,
-    FaqComponent
+    FaqComponent,
+    FinalizePurhcaseComponent
   ],
   imports: [
     BrowserModule,

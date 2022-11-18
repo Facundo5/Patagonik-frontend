@@ -14,6 +14,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
 import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
+import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
 
 
 
@@ -73,6 +74,9 @@ const routes: Routes = [
   },
   {
     path: 'admin-c', component: AdminClientsComponent
+  },
+  {
+    path: 'finalize', component: FinalizePurhcaseComponent
   }
 ];
 

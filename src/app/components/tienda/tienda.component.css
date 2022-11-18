@@ -1,74 +1,117 @@
 .carousel {
-box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.273);
-}
-.btntalle{
-  border-color: black;
-  border-radius: 100%;
-  margin-top: 2px;
-  margin-left: 2px;
-  margin-right: 2px;
-  font-size: 10px;
-}
-.btnInfo {
-  margin-top: 10px;
-}
-.categorias {
-  background-color: #FFFF;
-  border-radius: 5px;
-  padding-left: 30px;
-  margin-bottom: 20px;
-}
-.titulocategoria {
-  font-size: 20px;
-}
-.titlefilter {
-  font-size: 25px;
-  margin-top: 10px;
-}
-#categoryItem {
-  display: flex;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-#categoryItemtalle {
-  margin-left: 4px;
-  display: flex;
-}
-.card {
-  margin-bottom: 20px;
-}
-.options{
-  display: flex;
-  justify-content: right;
-  display: right;
-  margin-right: 300px;
-}
-.contenedorbody {
-  margin-bottom: 20px;
-}
-/*<!-- Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.273);
+  }
+  .btntalle{
+    border-color: black;
+    border-radius: 100%;
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    font-size: 10px;
+  }
+  .btnInfo {
+    margin-top: 10px;
+  }
+  .categorias {
+    background-color: #FFFF;
+    border-radius: 5px;
+    padding-left: 30px;
+    margin-bottom: 20px;
+  }
+  .titulocategoria {
+    font-size: 20px;
+  }
+  .titlefilter {
+    font-size: 25px;
+    margin-top: 10px;
+  }
+  #categoryItem {
+    display: flex;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  #categoryItemtalle {
+    margin-left: 4px;
+    display: flex;
+  }
+  .card {
+    margin-bottom: 20px;
+  }
+  .options{
+    display: flex;
+    justify-content: right;
+    display: right;
+    margin-right: 300px;
+  }
+  .contenedorbody {
+    margin-bottom: 20px;
+  }
+  /*<!-- Extra small devices (portrait phones, less than 576px)*/
+  @media (max-width: 575.98px) {
 
-}
+  }
 
-/* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767.98px) {
+  /* Small devices (landscape phones, 576px and up)*/
+  @media (min-width: 576px) and (max-width: 767.98px) {
 
-}
+  }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Medium devices (tablets, 768px and up)*/
+  @media (min-width: 768px) and (max-width: 991.98px) {
 
-}
+  }
 
-/* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) and (max-width: 1199.98px) {
 
-}
+  }
 
-/* Extra large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) {
+  /* Extra large devices (large desktops, 1200px and up)*/
+  @media (min-width: 1200px) {
 
-}
+  }
+
+
+  /*Alineacion Boton Flotante*/
+  .floating-container {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    margin: 35px 25px;
+  }
+
+  /*Boton FLotante Estilo al pasar el mouse*/
+  .floating-container:hover .floating-button {
+    box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+    -webkit-transform: translatey(5px);
+            transform: translatey(5px);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+  .floating-container .floating-button {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: #2cb3f0;
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    line-height: 65px;
+    text-align: center;
+    font-size: 23px;
+    z-index: 100;
+    box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+
+
