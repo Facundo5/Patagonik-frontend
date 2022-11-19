@@ -13,3 +13,4 @@ export class FinalizePurhcaseComponent implements OnInit {
   }
 
 }
+

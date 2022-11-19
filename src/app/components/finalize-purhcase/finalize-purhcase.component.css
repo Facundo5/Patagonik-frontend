@@ -1,25 +1,28 @@
+
+/*Color Fondo pago*/
 body{
 
   background-color: #eee;
 }
 
+/*Tamaño componente pago*/
 .container{
-
   height: 100vh;
-
 }
 
-
+/*Tarjeta sin bordes*/
 .card{
   border:none;
 }
 
+/*Formulario Tarjeta*/
 .form-control {
   border-bottom: 2px solid #eee !important;
   border: none;
   font-weight: 600
 }
 
+/*Icono Tarjeta*/
 .form-control:focus {
   color: #495057;
   background-color: #fff;
@@ -31,7 +34,7 @@ body{
 }
 
 
-
+/*Input Datos*/
 .inputbox {
   position: relative;
   margin-bottom: 20px;
@@ -45,6 +48,7 @@ body{
   transition: 0.5s
 }
 
+/*Icono*/
 .inputbox i {
   position: absolute;
   top: 13px;
@@ -53,11 +57,6 @@ body{
   color: #3F51B5
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0
-}
 
 .inputbox input:focus~span {
   transform: translateX(-0px) translateY(-15px);
@@ -69,11 +68,13 @@ input::-webkit-inner-spin-button {
   font-size: 12px
 }
 
+/*Background Menu Lateral*/
 .card-blue{
 
   background-color: #492bc4;
 }
 
+/*Tamaño Menu Lateral*/
 .hightlight{
 
   background-color: #5737d9;
@@ -82,7 +83,7 @@ input::-webkit-inner-spin-button {
   margin-top: 15px;
   font-size: 14px;
 }
-
+/*Color texto Precio*/
 .yellow{
 
   color: #fdcc49;
@@ -94,6 +95,7 @@ input::-webkit-inner-spin-button {
   font-size: 14px;
 }
 
+/*Estilos Botones*/
 .btn-success {
   color: #fff;
   background-color: #492bc4;
