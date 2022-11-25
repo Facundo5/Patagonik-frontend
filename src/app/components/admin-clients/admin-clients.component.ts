@@ -1,4 +1,6 @@
+import { RestService } from 'src/app/rest.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-clients',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminClientsComponent implements OnInit {
 
-  constructor() { }
+  public clients: any = [];
+
+  constructor(private restService: RestService) { }
 
   ngOnInit(): void {
+    this.getClients();
   }
-
-}
+  public getClients() {
+    this.restService.get('http://localhost:3000/api/admin/users')
+      .subscribe({
+        next: (res: any) => {
+          this.clients = res
+          console.log(this.clients)
+        }, error: (err: any) => {
+          console.log(err)
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Error del servidor o de su sesion'
+          })
+        },
+        complete: () => console.log('completado')
+      })
+    }
+  }

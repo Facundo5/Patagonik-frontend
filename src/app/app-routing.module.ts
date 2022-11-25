@@ -20,7 +20,7 @@ import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finali
 
 const routes: Routes = [
   {
-    path:'', redirectTo:'tienda', pathMatch: 'full'
+    path: '', redirectTo:'tienda', pathMatch: 'full'
   },
   {
     path:'tienda', component: TiendaComponent
@@ -38,7 +38,7 @@ const routes: Routes = [
     path:'register', component: RegisterComponent
   },
   {
-    path: 'product', component: ProductComponent
+    path: 'product/:id_shoes', component: ProductComponent
   },
   {
     path: 'tienda/product', redirectTo: 'product', pathMatch: 'full'

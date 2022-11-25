@@ -20,12 +20,13 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { UserpurchasesComponent } from './components/userpurchases/userpurchases.component';
 import { MenuprofileComponent } from './components/menuprofile/menuprofile.component';
 import { LoginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
 import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
 import { AdminProductsComponent } from './components/admin-products/admin-products.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
+import { TokenInterceptor } from './token-interceptor/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,6 @@ import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finali
     })
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}]
 })
 export class AppModule { }

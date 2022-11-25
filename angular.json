@@ -105,5 +105,8 @@
       }
     }
   },
-  "defaultProject": "PatagoniaStyleI-Commerce"
+  "defaultProject": "PatagoniaStyleI-Commerce",
+  "cli": {
+    "analytics": false
+  }
 }

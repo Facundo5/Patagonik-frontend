@@ -63,22 +63,22 @@
                       <!--Tabla Cabecera-->
                       <!--Tabla Cuerpo-->
                       <tbody>
-                          <tr>
+                          <tr *ngFor="let product of products">
                               <th scope="row">
                                 <div class="media align-items-center">
                                   <a href="#" class="avatar rounded-circle mr-3">
-                                    <img alt="Image placeholder" src="https://raw.githack.com/creativetimofficial/argon-dashboard/master/assets/img/theme/bootstrap.jpg">
+                                    <img alt="Image placeholder" [src]="product.dataurl">
                                   </a>
                                   <div class="media-body">
-                                    <span class="mb-0 text-sm">Producto 1</span>
+                                    <span class="mb-0 text-sm">{{product.title}}</span>
                                   </div>
                                 </div>
                               </th>
-                              <td>111111</td>
-                              <td>5</td>
-                              <td>$</td>
+                              <td>{{product.id_shoe}}</td>
+                              <td>{{product.stock}}</td>
+                              <td>${{product.price}}</td>
                               <td>
-                                <span class="badge bg-danger">Inactivo</span>
+                                <span class="badge bg-danger">{{product.statuse}}</span>
                               </td>
                               <td>
                                 <ul class="action-list">
