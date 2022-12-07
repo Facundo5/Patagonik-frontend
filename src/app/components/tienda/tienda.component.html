@@ -45,54 +45,167 @@
     </button>
   </div>
   <br>
-  <div class="contenedorbody">
+
+  <section class="padding-y">
+    <div class="container">
+
     <div class="row">
-      <div class="col-xs col-sm col-md col-g options">
-        <button type="button" class="btn btn-default dropdown-toggle " data-toggle="dropdown">
-          Mas relevantes<span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-          <li><a href="#">Recientes</a></li>
-          <li><a href="#">Mas barato</a></li>
-          <li><a href="#">Mas caro</a></li>
-          <li class="divider"></li>
-          <li><a href="#"></a></li>
-        </ul>
-      </div>
-      <div class="row">
-        <div class="col-2 categorias">
-          <h1 class="titlefilter">Filtrar</h1>
-          <div class="category_list">
-            <span><b>Marca</b></span>
-            <a href="#"  *ngFor="let brand of brands "id="categoryItemtalle">{{brand.name_brand}}</a>
-            <br>
-            <span><b>Talle</b></span>
-            <a href="#"  *ngFor="let size of sizes "id="categoryItemtalle">{{size.number}}</a>
-            <br>
-            <span><b>Estilo</b></span>
-            <a href="#" id="categoryItem" category="deportiva">Deportivo</a>
-            <a href="#" id="categoryItem" category="deportiva">Urbano</a>
-            <h1></h1>
+      <aside class="col-lg-3">
+
+    <!-- ===== Menu Lateral para Filtros ===== -->
+    <div id="aside_filter" class="card d-lg-block mb-5 collapse">
+      <strong class="d-block py-2"> Filtrar Productos </strong>
+      <!--Filtro para Marcas-->
+      <article class="filter-group">
+        <header class="card-header">
+          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands" aria-expanded="false">
+            <i class="icon-control fa fa-chevron-down"></i>  Marcas
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside_brands">
+          <div class="card-body">
+
+            <a href="" *ngFor="let brand of brands"><label class="checkbox-btn">
+              <input type="checkbox">
+              <span class="btn btn-light"> {{brand.name_brand}} </span>
+            </label></a> <!-- form-check end.// -->
+
+              <!-- form-check end.// -->
+          </div> <!-- card-body .// -->
+        </div> <!-- collapse.// -->
+      </article>
+
+      <article class="filter-group">
+        <header class="card-header">
+          <!--Filtro para Estilos-->
+          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside_3" aria-expanded="false">
+            <i class="icon-control fa fa-chevron-down"></i>  Estilos
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside_3">
+          <div class="card-body">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="">
+                <span class="form-check-label"> Deportivo </span>
+              </label> <!-- form-check end.// -->
+
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" value="">
+                <span class="form-check-label"> Urbano </span>
+              </label> <!-- form-check end.// -->
+              <!-- form-check end.// -->
+          </div> <!-- card-body .// -->
+        </div> <!-- collapse.// -->
+      </article><!-- filter-group // -->
+ <!-- filter-group // -->
+
+      <article class="filter-group">
+        <!--Filtro para Talles-->
+        <header class="card-header">
+          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside3" aria-expanded="false">
+            <i class="icon-control fa fa-chevron-down"></i>  Talles
+          </a>
+        </header>
+        <div class="collapse" id="collapse_aside3">
+          <div class="card-body">
+
+              <a href="" *ngFor="let size of sizes"><label class="checkbox-btn">
+                <input type="checkbox">
+                <span class="btn btn-light"> {{size.number}} </span>
+              </label></a>
+
+
+          </div> <!-- card-body.// -->
+        </div> <!-- collapse.// -->
+      </article>  <!-- filter-group // -->
+
+    </div> <!-- card.// -->
+    <!-- ===== End Menu Filtros .// ===== -->
+
+      </aside> <!-- col .// -->
+      <main class="col-lg-9">
+
+      <!--Filtro para mas recientes, etc-->
+      <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
+        <strong class="d-block py-2"> Patagonia Style</strong>
+          <div class="ms-auto">
+            <select class="form-select d-inline-block w-auto">
+                <option value="0">Recientes</option>
+                <option value="1">Mas Barato</option>
+                <option value="2">Mas Caro</option>
+            </select><!-- btn-group end.// -->
           </div>
-        </div>
-        <div class="col-xs col-sm col-md col-g">
-          <div class="card" style="width: 18rem;"  *ngFor="let card of cards">
-            <img [src]="card.dataurl" class="card-img-top" alt="...">
-            <div class="card-body">
-              <span><b>AirMax 2000</b></span><br>
-              <span class="card-title">{{card.title}}</span>
-              <h6>{{card.price}}</h6>
-              <a [routerLink]="['/','product',card?.id_shoes]" class="btn btnInfo btn-primary">Ver mas</a>
-            </div>
+      </header>
+
+        <div class="row">
+          <!-- Contenido Tarjetas -->
+          <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let card of cards">
+            <figure class="card card-product-grid">
+              <div class="img-wrap">
+                <img [src]="card.dataurl">
+              </div>
+              <figcaption class="info-wrap border-top">
+                <div class="price-wrap">
+                  <h4>{{card.title}}</h4>
+                  <p class="title mb-2">Airforce Pro</p>
+                  <h5 class="price">${{card.price}}</h5>
+                </div>
+
+                <a [routerLink]="['/','product',card?.id_shoes]" class="btn btn-primary">Ver Producto</a>
+                <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+              </figcaption>
+            </figure>
           </div>
-        </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <figure class="card card-product-grid">
+              <div class="img-wrap">
+                <img src="./../../../assets/zapatillaexamplehistory.png">
+              </div>
+              <figcaption class="info-wrap border-top">
+                <div class="price-wrap">
+                  <h4>NIKE</h4>
+                  <p class="title mb-2">Airforce Pro</p>
+                  <h5 class="price">$20000</h5>
+                </div> <!-- price-wrap.// -->
+
+                <a href="#" class="btn btn-primary">Ver Producto</a>
+                <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6">
+            <figure class="card card-product-grid">
+              <div class="img-wrap">
+                <img src="./../../../assets/zapatillaexamplehistory.png">
+              </div>
+              <figcaption class="info-wrap border-top">
+                <div class="price-wrap">
+                  <h4>NIKE</h4>
+                  <p class="title mb-2">Airforce Pro</p>
+                  <h5 class="price">$20000</h5>
+                </div> <!-- price-wrap.// -->
+
+                <a href="#" class="btn btn-primary">Ver Producto</a>
+                <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+              </figcaption>
+            </figure>
+          </div>
+        </div> <!-- card end.// -->
+
+        <hr>
+
+      </main>
+    </div>
+    </div>
+    </section>
+
         <!--Boton Flotante FAQ-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <div class="floating-container">
           <a href="./faq">
           <div class="floating-button">?</div></a>
         </div>
-      </div>
-    </div>
-  </div>
+
 </body>
