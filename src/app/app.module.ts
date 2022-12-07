@@ -27,6 +27,7 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { FaqComponent } from './components/faq/faq.component';
 import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
 import { TokenInterceptor } from './token-interceptor/token.interceptor';
+import { AdminRecordComponent } from './components/admin-record/admin-record.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { TokenInterceptor } from './token-interceptor/token.interceptor';
     AdminAddProductsComponent,
     AdminProductsComponent,
     FaqComponent,
-    FinalizePurhcaseComponent
+    FinalizePurhcaseComponent,
+    AdminRecordComponent
   ],
   imports: [
     BrowserModule,

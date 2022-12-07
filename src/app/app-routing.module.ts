@@ -15,6 +15,7 @@ import { AdminProductsComponent } from './components/admin-products/admin-produc
 import { AdminAddProductsComponent } from './components/admin-add-products/admin-add-products.component';
 import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
 import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
+import { AdminRecordComponent } from './components/admin-record/admin-record.component';
 
 
 
@@ -74,6 +75,9 @@ const routes: Routes = [
   },
   {
     path: 'admin-c', component: AdminClientsComponent
+  },
+  {
+    path: 'admin-r', component: AdminRecordComponent
   },
   {
     path: 'finalize', component: FinalizePurhcaseComponent
