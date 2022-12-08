@@ -1,53 +1,91 @@
 .carousel {
   box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.273);
   }
-  .btntalle{
-    border-color: black;
-    border-radius: 100%;
-    margin-top: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    font-size: 10px;
-  }
-  .btnInfo {
-    margin-top: 10px;
-  }
-  .categorias {
-    background-color: #FFFF;
-    border-radius: 5px;
-    padding-left: 30px;
-    margin-bottom: 20px;
-  }
-  .titulocategoria {
-    font-size: 20px;
-  }
-  .titlefilter {
-    font-size: 25px;
-    margin-top: 10px;
-  }
-  #categoryItem {
-    display: flex;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-  }
-  #categoryItemtalle {
-    margin-left: 4px;
-    display: flex;
-  }
-  .card {
-    margin-bottom: 20px;
-  }
-  .options{
-    display: flex;
-    justify-content: right;
-    display: right;
-    margin-right: 300px;
-  }
-  .contenedorbody {
-    margin-bottom: 20px;
-  }
+
+.card{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(81, 88, 94, .12);
+  border-radius: 0.35rem;
+}
+
+.card-product-grid {
+  margin-bottom: 20px;
+}
+
+.card.card-product-grid .img-wrap {
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+.img-wrap img{
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+}
+
+.card-product-grid .info-wrap {
+  padding: 1rem 1.2rem;
+  overflow: hidden;
+}
+
+.btn-light {
+  background-color: #fff;
+  border-color: #dee2e6;
+  color: #212529;
+}
+.btn-icon {
+  width: 2.6rem;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 10px;
+}
+
+strong{
+  margin-left: 15px;
+}
+
+.row{
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 992px){
+.col-lg-4 {
+  flex: 0 0 auto;
+  width: 33.3333333333%;
+}}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+figure{
+  margin: 0;
+}
+
+.btn{
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border:  1px solid transparent;
+  user-select: none;
+  padding: 0.43rem 0.84rem;
+  font-size: 1rem;
+  border-radius: 0.35rem;
+}
+
+
   /*<!-- Extra small devices (portrait phones, less than 576px)*/
   @media (max-width: 575.98px) {
 

@@ -12,11 +12,11 @@
                   <div class="row">
                       <!-- Grid column Titulo -->
                       <div class="col-md-12">
-                          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Clientes Registrados</h2>
+                          <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Historial de Ventas</h2>
                           <nav class="nav nav-borders">
                             <a class="nav-link ms-0" href="./admin-p" target="__blank">Productos</a>
-                            <a class="nav-link active" href="./admin-c" target="__blank">Clientes</a>
-                            <a class="nav-link ms-0" href="./admin-r" target="__blank">Historial Ventas</a>
+                            <a class="nav-link ms-o" href="./admin-c" target="__blank">Clientes</a>
+                            <a class="nav-link active" href="./admin-r" target="__blank">Historial Ventas</a>
                           </nav>
                       <div class="card-header align-items-center py-5 gap-2 gap-md-5" data-select2-id="select2-data-124-0z31">
                             <!--Card title-->
@@ -31,7 +31,7 @@
                                   </svg>
                                 </span>
                                 <!--end Imagen-->
-                                <input type="text" data-kt-ecommerce-product-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Client">
+                                <input type="text" data-kt-ecommerce-product-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Sales">
                               </div>
                               <!--end:: Buscador-->
                             </div>
@@ -46,21 +46,21 @@
                       <!--Tabla Cabecera-->
                       <thead>
                           <tr>
-                              <th>ID</th>
-                              <th>Nombre</th>
-                              <th>Email</th>
+                              <th>ID Venta</th>
+                              <th>Cliente</th>
+                              <th>Producto</th>
                               <th>Estado</th>
                           </tr>
                       </thead>
                       <!--Tabla Cabecera-->
                       <!--Tabla Cuerpo-->
                       <tbody>
-                          <tr *ngFor="let client of clients">
-                              <td>{{client.id_user}}</td>
-                              <td>{{client.name}}</td>
-                              <td>{{client.email}}</td>
+                          <tr>
+                              <td></td>
+                              <td></td>
+                              <td></td>
                               <td>
-                                <span class="badge bg-danger">{{client.is_active}}</span>
+                                <span class="badge bg-danger"></span>
                               </td>
                           </tr>
                       </tbody>
