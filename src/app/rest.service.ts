@@ -12,6 +12,9 @@ export class RestService {
   public get(url: string  | any){
     return this.http.get(url);
   }
+  public delete(url: string  | any){
+    return this.http.delete(url);
+  }
   public post(url: string, body: any){
     return this.http.post(url, body);
   }
