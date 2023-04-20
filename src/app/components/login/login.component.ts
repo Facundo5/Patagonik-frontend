@@ -40,10 +40,9 @@ export class LoginComponent implements OnInit {
           Swal.fire({
             icon: 'error',
             title: 'ha ocurrido un error',
-            text: 'Usuario o contraseña incorrecta'
+            text: err.error.msg
           })
         },
-        complete: () => console.log('completado')
       })
   }
 }

@@ -1,3 +1,4 @@
+
 <div class="body d-flex py-3">
   <div class="container-xxl">
 
@@ -153,21 +154,14 @@
             </div>
             <div class="card-body">
               <div class="row g-3 align-items-center">
-                <div class="col-md-12">
-                  <label for="images" class="form-label">Imagenes del Producto</label>
-                  <small class="d-block text-muted mb-2">Solo imagenes con ... MB máximo</small>
-                  <div class="dropify-wrapper has-preview">
-                    <div class="dropify-message"></div>
-                    <input type="file" for="image" (change)="onselect($event)" multiple id="image"
-                      formControlName="image">
+                <div (ngSubmit)="addShoes()" class="class="form-container>
+                  <input type="file" multiple (change)="onFileSelect($event)">
+                  <div class="image-preview-container">
+                    <div *ngFor="let image of selectedImages" class="image-preview">
+                      <img [src]="image.url" alt="Vista previa de la imagen">
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div class=" box-images">
-                <div class="row">
-                  <div class="box-image-big">
-                    <img *ngFor="let url of urls" [src]="url" width="200px" height="200px" class="img">
-                  </div>
+                  <button type="submit">Subir imágenes</button>
                 </div>
               </div>
             </div>

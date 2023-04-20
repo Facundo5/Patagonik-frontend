@@ -40,7 +40,7 @@ export class AdminProductsComponent implements OnInit {
   public delProduct(id_product: string) {
     Swal.fire({
       title: 'Estas seguro?',
-      text: "No vas a poder revertir esta eliminacion!",
+      text: "No vas a poder revertir esta accion!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',

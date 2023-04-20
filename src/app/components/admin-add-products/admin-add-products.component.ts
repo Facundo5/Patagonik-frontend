@@ -5,8 +5,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { RestService } from './../../rest.service';
 import Swal from 'sweetalert2';
 
-interface HtmlInputEvent extends Event {
-  target: HTMLInputElement & EventTarget
+interface Image {
+  url: string;
+  file: File;
 }
 @Component({
   selector: 'app-admin-add-products',
@@ -14,6 +15,8 @@ interface HtmlInputEvent extends Event {
   styleUrls: ['./admin-add-products.component.css']
 })
 export class AdminAddProductsComponent implements OnInit {
+
+  selectedImages: Image[] = [];
 
   brands: any | undefined;
   sizes: any | undefined;
@@ -41,28 +44,39 @@ export class AdminAddProductsComponent implements OnInit {
       image: ['', [Validators.required]]
     })
   }
-  //Funcion para agregar una zapatilla
+  onFileSelect(event: any): void {
+    const files = event.target.files;
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.selectedImages.push({ url: e.target.result, file });
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
   public addShoes() {
-    const fd = new FormData;
+    const fd = new FormData();
     fd.append('price', this.formShoes.value.price)
     fd.append('statuse', this.formShoes.value.statuse)
     fd.append('size', this.formShoes.value.size)
     fd.append('brand', this.formShoes.value.brand)
     fd.append('stock', this.formShoes.value.stock)
-    fd.append('name', this.formShoes.value.name)
+    fd.append('title', this.formShoes.value.name)
     fd.append('model', this.formShoes.value.model)
     fd.append('colour', this.formShoes.value.colour)
-    for (var i = 0; i < this.urls.length; i++) { 
-      fd.append("image", this.urls[i]);
+    for (let i = 0; i < this.selectedImages.length; i++) {
+      fd.append('images', this.selectedImages[i].file);
+      console.log(this.selectedImages)
     }
-    console.log(this.urls)
-    console.log(fd)
+  //Funcion para agregar una zapatilla
     //Pasamos toda la informacion en un formData
     this.RestService.post('http://localhost:3000/api/admin/addproduct', fd)
     .subscribe({
       next: (res: any) => {
         Swal.fire({
-          icon: 'error',
+          icon: 'success',
           title: 'success',
           text: 'Producto agregado con exito'
         })
@@ -76,19 +90,6 @@ export class AdminAddProductsComponent implements OnInit {
       },
       complete: () => console.log('completado')
     })
-  }
-  urls: string[] = [];
-  onselect(event: any) {
-    if (event.target.files?.[0]) {
-      for (let i = 0; i < event.target.files.length; i++) {
-        var reader = new FileReader();
-        reader.readAsDataURL(event.target.files[i]);
-        reader.onload = (events: any) => {
-          this.urls.push(events.target.result);
-          console.log(this.urls)
-        }
-      }
-    }
   }
   public getSizes() {
     this.RestService.get('http://localhost:3000/api/getsizes')
@@ -140,3 +141,7 @@ export class AdminAddProductsComponent implements OnInit {
   }
 
 }
+function uploadImages() {
+  throw new Error('Function not implemented.');
+}
+

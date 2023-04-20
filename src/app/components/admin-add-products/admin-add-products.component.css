@@ -76,3 +76,23 @@
   margin: 10px;
   
 }
+.form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.image-preview-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.image-preview {
+  flex: 0 0 calc(33.33% - 10px);
+  max-width: 100px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+}

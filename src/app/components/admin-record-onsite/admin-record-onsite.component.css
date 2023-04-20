@@ -1,0 +1,70 @@
+/*Estilos Generales*/
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    min-height: 70px;
+    padding: 0 2.25rem;
+}
+
+/*Estilos de navegador*/
+.nav-borders .nav-link.active {
+    color: #0061f2;
+    border-bottom-color: #0061f2;
+}
+
+.nav-borders .nav-link {
+    color: #69707a;
+    border-bottom-width: 0.125rem;
+    border-bottom-style: solid;
+    border-bottom-color: transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/*Icono Buscador*/
+.svg-icon {
+    line-height: 1;
+    color: #000;
+}
+
+.ms-4 {
+    margin-left: 1rem !important;
+}
+
+.position-absolute {
+    position: absolute !important;
+}
+
+.ps-14 {
+    padding-left: 3.5rem !important;
+}
+
+.py-5 {
+    padding-top: 1.25rem !important;
+    padding-bottom: 1.25rem !important;
+}
+
+/*background general*/
+body {
+    background-color: #D9D9D9;
+}
+
+
+/*Tamaño texto*/
+.text-sm {
+    font-size: .875rem !important;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.media-body {
+    flex: 1 1;
+}

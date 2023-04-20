@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 })
 export class AdminRecordComponent {
 
-  public record: any = [];
+  public records: any = [];
 
   constructor(private restService : RestService){ }
 
@@ -19,12 +19,11 @@ export class AdminRecordComponent {
 
   public getSales(){
     //Traemos todas las ventas que se encuentren en la base de datos
-    this.restService.get('http://localhost:3000/api/admin/viewproducts')
+    this.restService.get('http://localhost:3000/api/admin/sales')
     .subscribe({
       //Si viene todo bien asignamos la respuesta a products
       next: (res: any) => {
-        this.record = res
-        console.log(this.record)
+        this.records = res
       }, error: (err) =>{
         console.log(err)
       Swal.fire({
@@ -33,7 +32,6 @@ export class AdminRecordComponent {
         text: 'Error al traer las ventas'
       })
       },
-      complete: ()=> console.log('Completado')
     })
   }
 

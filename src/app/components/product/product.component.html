@@ -96,23 +96,28 @@
                                         <!--Acotacion -->
                                         <p>Aceptamos Mercado Pago</p>
                                         <!--Cantidad -->
-                                        <div class="product-btn mb-5">
-                                            <div class="d-flex flex-wrap">
-                                                <div class="mt-2 mt-sm-0  me-1">
-                                                    <div class="input-group">
-                                                        <input type="number" class="form-control" placeholder="1"
-                                                            min="1" max="5">
-                                                        <span class="input-group-text"><i class="fa fa-sort"></i></span>
+                                        <form [formGroup]="formPurchase" (submit)="purchaseMp()">
+                                            <div class="product-btn mb-5">
+                                                <div class="d-flex flex-wrap">
+                                                    <div class="mt-2 mt-sm-0  me-1">
+                                                        <div class="input-group">
+                                                            <input type="number" formControlName="quantity"
+                                                                class="form-control"  [value]="1">
+                                                            <span class="input-group-text">{{response.quantity}}</span></div>
+                                                    </div>
+                                                    <!--Botones -->
+                                                    <button class="btn btn-primary mx-1 mt-2  mt-sm-0"><i
+                                                            class="fa-solid fa-bag-shopping"></i>Añadir al
+                                                        Carrito</button>
+                                                    <!--End Botones -->
+                                                    <div id="btnmp">
+                                                        <button type="submit"
+                                                            class="btn btn-primary mx-1 mt-2 mt-sm-0 w-sm-100"><i
+                                                                class="fa fa-shopping-cart me-1"></i>Comprar</button>
                                                     </div>
                                                 </div>
-                                                <!--Botones -->
-                                                <button class="btn btn-primary mx-1 mt-2  mt-sm-0"><i
-                                                        class="fa-solid fa-bag-shopping"></i>Añadir al Carrito</button>
-                                                <button class="btn btn-primary mx-1 mt-2 mt-sm-0 w-sm-100"><i
-                                                        class="fa fa-shopping-cart me-1"></i>Comprar</button>
-                                                <!--End Botones -->
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -149,8 +154,11 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <div class="row features"><span><b>Tipo</b>:&nbsp;Zapatilla</span></div>
-                                            <div class="row features"><span><b>Marca</b>:&nbsp;{{response.id_brand[0].name_brand}}</span></div>
-                                            <div class="row features"><span><b>Modelo</b>:&nbsp;{{response.model}}</span></div>
+                                            <div class="row features">
+                                                <span><b>Marca</b>:&nbsp;{{response.id_brand[0].name_brand}}</span>
+                                            </div>
+                                            <div class="row features">
+                                                <span><b>Modelo</b>:&nbsp;{{response.model}}</span></div>
                                         </div>
                                         <div class="col-6 features">
                                             <div class="row features"><span><b>Material</b>:&nbsp;Lona</span></div>

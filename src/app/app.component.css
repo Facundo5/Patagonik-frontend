@@ -3,6 +3,5 @@ body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: auto 1fr auto;
-  background-color: #D9D9D9;
   font-family: sans-serif;
 }

@@ -35,13 +35,17 @@
         <li class="nav-item">
           <a class="nav-link active d-flex text-center" aria-current="page" routerLink="contacto"><span class="small">Contactos</span></a>
         </li>
+    <ng-container *ngIf="!restService.loggedIn(); else loggedIn">
         <li class="nav-item">
-          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="register"><span class="small">Registro</span></a>
+          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="register"><span class="small">Registrarse</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="login"><span class="small">Ingresar</span></a>
+          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="login"><span class="small">Entrar</span></a>
         </li>
-
+      </ng-container>
+      <ng-template #loggedIn>
+        <a class="nav-link active d-flex text-center" aria-current="page" routerLink="login"><span class="small">Salir</span></a>
+      </ng-template>
         <li class="nav-item">
           <a
             class="nav-link align-items-center"

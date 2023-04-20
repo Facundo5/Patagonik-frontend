@@ -16,13 +16,11 @@ import { AdminAddProductsComponent } from './components/admin-add-products/admin
 import { AdminClientsComponent } from './components/admin-clients/admin-clients.component';
 import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
 import { AdminRecordComponent } from './components/admin-record/admin-record.component';
+import { AdminRecordOnsiteComponent } from './components/admin-record-onsite/admin-record-onsite.component';
 
 
 
 const routes: Routes = [
-  {
-    path: '', redirectTo:'tienda', pathMatch: 'full'
-  },
   {
     path:'tienda', component: TiendaComponent
   },
@@ -77,7 +75,10 @@ const routes: Routes = [
     path: 'admin-c', component: AdminClientsComponent
   },
   {
-    path: 'admin-r', component: AdminRecordComponent
+    path: 'admin-ro', component: AdminRecordComponent
+  },
+  {
+    path: 'admin-rp', component: AdminRecordOnsiteComponent
   },
   {
     path: 'finalize', component: FinalizePurhcaseComponent
