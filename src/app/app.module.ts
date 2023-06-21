@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -13,7 +12,6 @@ import { NosotrosComponent } from './components/nosotros/nosotros.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 import { AccountrecoveryComponent } from './components/accountrecovery/accountrecovery.component';
 import { ReactiveFormsModule } from '@angular/forms'
-import { ErrorTailorModule } from '@ngneat/error-tailor';
 import { AccountrecoverycheckedComponent } from './components/accountrecoverychecked/accountrecoverychecked.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component'
 import { ContactoComponent } from './components/contacto/contacto.component';
@@ -29,6 +27,15 @@ import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finali
 import { TokenInterceptor } from './token-interceptor/token.interceptor';
 import { AdminRecordComponent } from './components/admin-record/admin-record.component';
 import { AdminRecordOnsiteComponent } from './components/admin-record-onsite/admin-record-onsite.component';
+import {CookieService} from 'ngx-cookie-service';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AdminUserComponent } from './components/dashboard/admin-user/admin-user.component';
+import { ERROR401Component } from './components/error401/error401.component';
+import { ERROR404Component } from './components/error404/error404.component';
+import { VerificationOfPersonComponent } from './components/verification-of-person/verification-of-person.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -54,25 +61,20 @@ import { AdminRecordOnsiteComponent } from './components/admin-record-onsite/adm
     FaqComponent,
     FinalizePurhcaseComponent,
     AdminRecordComponent,
-    AdminRecordOnsiteComponent
+    AdminRecordOnsiteComponent,
+    DashboardComponent,
+    AdminUserComponent,
+    ERROR401Component,
+    ERROR404Component,
+    VerificationOfPersonComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    ErrorTailorModule.forRoot({
-      errors: {
-        useValue: {
-          required: 'Este campo es requerido',
-          minlength: ({ requiredLength, actualLength }) =>
-                      `Se espereban ${requiredLength} caracteres,  pero enviaste ${actualLength}`,
-          email: error => `Email invalido`
-        }
-      }
-    })
-  ],
+    HttpClientModule,  ],
   bootstrap: [AppComponent],
-  providers: [{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}]
+  providers: [  // Proveedor para inyectar Quagga en el componente o servicio
+    {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}, CookieService]
 })
 export class AppModule { }

@@ -3,8 +3,6 @@ import { RestService } from './../../rest.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
-import { isRedirect } from 'node-fetch';
-import { title } from 'process';
 
 
 @Component({

@@ -1,13 +1,16 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestService {
 
-  constructor(private http: HttpClient, public router: Router) { }
+  token="";
+  constructor(private http: HttpClient, public router: Router, private cookies: CookieService) { }
 
   public get(url: string  | any){
     return this.http.get(url);
@@ -19,13 +22,19 @@ export class RestService {
     return this.http.post(url, body);
   }
   loggedIn() {
-    return !!localStorage.getItem('token');
+    return !!this.cookies.get("token");
   }
   getToken() {
-    return localStorage.getItem('token')
+    return this.cookies.get("token")
   }
   logout() {
-    localStorage.removeItem('token');
+    this.token="";
+    this.cookies.set("token", this.token)
     this.router.navigate(['/login'])
+    window.location.reload
+  }
+  decodeToken(token: string): any {
+    const decodedToken = jwt_decode(token);
+    return decodedToken;
   }
 }

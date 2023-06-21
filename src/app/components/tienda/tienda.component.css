@@ -1,7 +1,3 @@
-.carousel {
-  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.273);
-  }
-
 .card{
   position: relative;
   display: flex;
@@ -151,5 +147,6 @@ figure{
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
   }
-
-
+.container {
+  margin-top: 50px;
+}

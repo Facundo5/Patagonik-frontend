@@ -2,7 +2,7 @@ body {
   background: #D9D9D9;
 }
 .bg {
-  background-image: url(./../../../assets/IMG-login-register.jpg);
+  background-image: url();
   background-position: center center;
   background-size: cover;
 }

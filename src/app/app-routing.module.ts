@@ -17,6 +17,11 @@ import { AdminClientsComponent } from './components/admin-clients/admin-clients.
 import { FinalizePurhcaseComponent } from './components/finalize-purhcase/finalize-purhcase.component';
 import { AdminRecordComponent } from './components/admin-record/admin-record.component';
 import { AdminRecordOnsiteComponent } from './components/admin-record-onsite/admin-record-onsite.component';
+import { CheckloginGuard } from './guards/checklogin.guard';
+import { PermissionsGuard } from './../app/guards/permissions.guard';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { VerificationOfPersonComponent } from './components/verification-of-person/verification-of-person.component';
+
 
 
 
@@ -56,8 +61,6 @@ const routes: Routes = [
   },
   {
   path: 'recoveryaccountchecked', component: AccountrecoverycheckedComponent
-  }, {
-    path: 'userprofile', component: UserprofileComponent
   },
   {
     path: "contacto", component: ContactoComponent
@@ -69,7 +72,8 @@ const routes: Routes = [
     path: 'admin-p', component: AdminProductsComponent
   },
   {
-    path: 'admin-add', component: AdminAddProductsComponent
+    path: 'admin-add', component: AdminAddProductsComponent,
+    canActivate: [CheckloginGuard, PermissionsGuard], data: { expectedRole: 'admin' }
   },
   {
     path: 'admin-c', component: AdminClientsComponent
@@ -82,6 +86,12 @@ const routes: Routes = [
   },
   {
     path: 'finalize', component: FinalizePurhcaseComponent
+  },
+  {
+    path: 'dashboard', component: DashboardComponent
+  },
+  {
+    path: 'person-Auth', component: VerificationOfPersonComponent
   }
 ];
 

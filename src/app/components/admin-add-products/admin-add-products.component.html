@@ -1,4 +1,3 @@
-
 <div class="body d-flex py-3">
   <div class="container-xxl">
 
@@ -10,7 +9,7 @@
         </div>
       </div>
     </div> <!-- Row end  -->
-    <form [formGroup]="formShoes" (submit)="addShoes()" errorTailor>
+    <form [formGroup]="formShoes" (submit)="addShoes()">
       <div class="row g-3 mb-3">
         <div class="col-xl-4 col-lg-4">
           <!-- Begin Menú Lateral  -->
@@ -19,14 +18,50 @@
             <div class="card mb-3">
               <div
                 class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                <h6 class="m-0 fw-bold">Precio</h6>
+                <h6 class="m-0 fw-bold">Valor</h6>
               </div>
 
               <div class="card-body">
-                <div class="row g-3 align-items-center">
+                <div class="row g-3 align-items-center justify-content-between">
                   <div class="col-md-12">
-                    <label for="price" class="form-label">Precio Actual</label>
-                    <input type="text" id="price" formControlName="price" class="form-control">
+                    <label for="price" class="form-label">Precio</label>
+                    <div class="input-group">
+                      <input type="text" id="price" [class.is-invalid]="priceInvalid" formControlName="price"
+                        class="form-control">
+                      <span class="input-group-text">ARS</span>
+                    </div>
+                    <small *ngIf="priceInvalid" class="text-danger">Debes ingresar un precio</small>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!--Detalles de impuestos-->
+            <div class="card mb-3">
+              <div
+                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+                <h6 class="m-0 fw-bold">Impuestos</h6>
+              </div>
+              <div class="card-body cabezera">
+                <div class="row g-3 align-items-center justify-content-between">
+                  <div class="col-md-6">
+                    <label class="form-label">IVA</label>
+                    <div class="taxes">
+                      <p class="discou" id="iva"></p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="discount" class="form-label">Costo por venta</label>
+                    <div class="taxes">
+                      <p class="discou" id="comision"></p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="discount" class="form-label">Beneficio por venta</label>
+                    <div class="benefit" id="benefit">
+                      <p id="totalAmount"></p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -40,38 +75,20 @@
               <div class="card-body">
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" value="publicado" name="statuse"
-                      formControlName="statuse">
-                    Publicado
+                    <input class="form-check-input" [class.is-invalid]="statusInvalid" type="radio" value="publicado"
+                      name="status" formControlName="status">
+                    Nuevo
                   </label>
                 </div>
                 <div class="form-check">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" value="pausado" formControlName="statuse" name="statuse">
-                    Pausado
-                  </label>
-                </div>
-                <div class="form-check">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" value="oculto" formControlName="statuse"
-                      name="statuse">
-                    Oculto
+                    <input class="form-check-input" [class.is-invalid]="statusInvalid" type="radio" value="pausado"
+                      formControlName="status" name="status">
+                    Usado
                   </label>
                 </div>
               </div>
-            </div>
-            <!-- Div Talle -->
-            <div class="card mb-3">
-              <div
-                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                <h6 class="m-0 fw-bold">Talles</h6>
-              </div>
-              <div class="card-body">
-                <select formControlName="size" class="form-select" size="3" aria-label="size 3 select example">
-                  <option [ngValue]="null" disabled>Selecciona una categoria</option>
-                  <option *ngFor="let size of sizes" [ngValue]="size">{{size.number}}</option>
-                </select>
-              </div>
+              <small *ngIf="statusInvalid" class="text-danger">Debes seleccionar un estado del producto</small>
             </div>
             <!-- Div Color -->
             <div class="card mb-3">
@@ -80,44 +97,13 @@
                 <h6 class="m-0 fw-bold">Colores</h6>
               </div>
               <div class="card-body">
-                <select formControlName="colour" class="form-select" size="3" aria-label="size 3 select example">
-                  <option [ngValue]="null" disabled>Selecciona un color</option>
-                  <option *ngFor="let colour of colours" [ngValue]="colour">{{colour.colour}}</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="card mb-3">
-              <div
-                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                <h6 class="m-0 fw-bold">Marca</h6>
-              </div>
-
-              <!-- Div Marcas -->
-              <div class="card-body">
-                <label class="form-label">Seleccionar Marca</label>
-                <select formControlName="brand" class="form-select" size="3" aria-label="size 3 select example">
-                  <option [ngValue]="null" disabled>Selecciona una marca</option>
-                  <option *ngFor="let brand of brands" [ngValue]="brand">{{brand.name_brand}}</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Div Inventario  -->
-            <div class="card">
-              <div
-                class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
-                <h6 class="m-0 fw-bold">Inventario</h6>
-              </div>
-              <div class="card-body">
-                <div class="row g-3 align-items-center">
-                  <div class="col-md-12">
-                    <label for="stock" class="form-label">Stock</label>
-                    <input type="text" id="stock" formControlName="stock" class="form-control">
-                  </div>
+                <div>
+                  <div class="d-flex justify-content-center align-items-center" id="colourContainer"></div>
                 </div>
               </div>
             </div>
+            <!-- Div Marcas -->
+
           </div>
         </div>
         <!-- Principal  -->
@@ -130,19 +116,16 @@
             <div class="card-body">
               <div class="row g-3 align-items-center">
                 <div class="col-md-6">
-                  <label for="name" class="form-label">Nombre</label>
-                  <input type="text" id="name" formControlName="name" class="form-control">
+                  <label for="title" class="form-label">Titulo</label>
+                  <input type="text" [class.is-invalid]="titleInvalid" id="stock" formControlName="title"
+                    class="form-control">
+                  <small *ngIf="titleInvalid" class="text-danger">Debes ingresar un titulo</small>
                 </div>
                 <div class="col-md-6">
-                  <label for="model" class="form-label">Modelo</label>
-                  <input type="text" id="model" formControlName="model" class="form-control">
-                </div>
-                <div class="col-md-12">
-                  <label class="form-label">URL de Producto</label>
-                  <div class="input-group mb-3">
-                    <span class="input-group-text">https://</span>
-                    <input type="text" class="form-control" value="/product/id1">
-                  </div>
+                  <label for="stock" class="form-label">Stock disponible</label>
+                  <input type="text" [class.is-invalid]="stockInvalid" id="stock" formControlName="stock"
+                    class="form-control">
+                  <small *ngIf="stockInvalid" class="text-danger">Debes ingresar el stock disponible</small>
                 </div>
               </div>
             </div>
@@ -154,8 +137,9 @@
             </div>
             <div class="card-body">
               <div class="row g-3 align-items-center">
-                <div (ngSubmit)="addShoes()" class="class="form-container>
-                  <input type="file" multiple (change)="onFileSelect($event)">
+                <div (ngSubmit)="addShoes()" class="" form-container>
+                  <input formControlName="image" type="file" multiple [class.is-invalid]="imageInvalid"
+                    (change)="onFileSelect($event)">
                   <div class="image-preview-container">
                     <div *ngFor="let image of selectedImages" class="image-preview">
                       <img [src]="image.url" alt="Vista previa de la imagen">
@@ -163,6 +147,7 @@
                   </div>
                   <button type="submit">Subir imágenes</button>
                 </div>
+                <small *ngIf="imageInvalid" class="text-danger">Debes subir una imagen al menos</small>
               </div>
             </div>
           </div>
@@ -170,7 +155,8 @@
             <div class="border-0 mb-4">
               <div
                 class="card-header py-3 no-bg bg-transparent d-flex align-items-center px-0 justify-content-between border-bottom flex-wrap">
-                <button type="submit" class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase  mb-0">Subir</button>
+                <button type="submit"
+                  class="btn btn-primary btn-set-task w-sm-100 py-2 px-5 text-uppercase  mb-0">Subir</button>
               </div>
             </div>
           </div> <!-- Row end  -->

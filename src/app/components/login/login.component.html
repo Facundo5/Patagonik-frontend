@@ -5,20 +5,23 @@
     </div>
     <div class="col bg-white p-5 rounded-end">
       <div class="text-end">
-        <img src="./../../../assets/logo-ecommerce 1.png" width="48" alt="logo">
+        <img src="./../../../assets/patagonik texto sin fondo.png" width="25%" alt="logo">
       </div>
 
-      <h2 class="fw-bold text-center py-5">Bienvenido</h2>
+      <h2 class="fw-bold text-center py-5">Hola, de nuevo!</h2>
       <!-- LOGIN -->
 
-      <form [formGroup]="loginForm" (submit)="loginUser()" errorTailor>
+      <form [formGroup]="loginForm" (submit)="loginUser()">
         <div class="mb-4 form-group">
           <label for="email" class="form-label">Correo Electronico</label>
-          <input type="email" formControlName="email" class="form-control" name="email">
+          <input type="email" formControlName="email" [class.is-invalid]="emailInvalid" class="form-control" name="email">
+          <small *ngIf="emailInvalid" class="text-danger">Email requerido</small>
         </div>
         <div class="mb-4 form-group">
           <label for="password" class="form-label">Contraseña</label>
-          <input type="password" class="form-control" formControlName="password" name="password">
+          <input type="password" class="form-control" [class.is-invalid]="passwordInvalid" formControlName="password" name="password">
+          <small *ngIf="passwordInvalid" class="text-danger">Campo obligatorio</small>
+          <br>
           <span>¿Olvidaste tu contraseña?<a routerLink="recoveryaccount" style="text-decoration:none">&nbsp;Recuperar
               cuenta</a></span>
         </div>

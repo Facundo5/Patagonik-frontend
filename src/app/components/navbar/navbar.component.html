@@ -6,7 +6,7 @@
   <div class="container">
 
     <!-- Logo Página -->
-    <a class="logo" ><img src="../assets/logo-ecommerce 1.png" height="50px" width="70px"></a>
+    <a class="logo" ><img src="../../../assets/patagonik texto sin fondo.png" width="20px" height="20px"></a>
 
     <!-- Botón Responsivo -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
         </li>
       </ng-container>
       <ng-template #loggedIn>
-        <a class="nav-link active d-flex text-center" aria-current="page" routerLink="login"><span class="small">Salir</span></a>
+        <a class="nav-link active d-flex text-center" aria-current="page" (click)="restService.logout()" routerLink="login"><span class="small">Salir</span></a>
       </ng-template>
         <li class="nav-item">
           <a
