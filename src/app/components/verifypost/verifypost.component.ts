@@ -1,26 +1,27 @@
-import { RestService } from 'src/app/rest.service';
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/rest.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-admin-clients',
-  templateUrl: './admin-clients.component.html',
-  styleUrls: ['./admin-clients.component.css']
+  selector: 'app-verifypost',
+  templateUrl: './verifypost.component.html',
+  styleUrls: ['./verifypost.component.css']
 })
-export class AdminClientsComponent implements OnInit {
+export class VerifypostComponent implements OnInit {
 
-  public clients: any = [];
+  publications: any;
 
   constructor(private restService: RestService) { }
 
   ngOnInit(): void {
-    this.getClients();
+    this.getPublications();
   }
-  public getClients() {
-    this.restService.get('http://localhost:3000/api/admin/users')
+
+  public getPublications() {
+    this.restService.get('http://localhost:3000/api/getbrands')
       .subscribe({
         next: (res: any) => {
-          this.clients = res
+          this.publications = res
         }, error: (err: any) => {
           console.log(err)
           Swal.fire({
@@ -31,5 +32,5 @@ export class AdminClientsComponent implements OnInit {
         },
         complete: () => console.log('completado')
       })
-    }
   }
+}

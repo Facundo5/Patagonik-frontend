@@ -1,0 +1,27 @@
+<div class="row">
+    <aside class="col-lg-3">
+        <div class="row">
+            <!-- Contenido Tarjetas -->
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let publication of publications">
+                <figure class="card card-product-grid">
+                    <div class="img-wrap">
+                        <img [src]="publication.dataurl">
+                    </div>
+                    <figcaption class="info-wrap border-top">
+                        <div class="price-wrap">
+                            <h4>{{publication.title}}</h4>
+                            <p class="title mb-2">Airforce Pro</p>
+                            <h5 class="price">${{publication.price}}</h5>
+                        </div>
+
+                        <!--<a [routerLink]="['/','product',card?.id_shoes]" class="btn btn-primary">Ver Producto</a>-->
+                        <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+                    </figcaption>
+                </figure>
+                <span class="material-symbols-outlined">
+                    done
+                </span>
+            </div>
+        </div> <!-- card end.// -->
+    </aside>
+</div>

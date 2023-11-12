@@ -69,23 +69,23 @@
                               <th scope="row">
                                 <div class="media align-items-center">
                                   <a href="#" class="avatar rounded-circle mr-3">
-                                    <img alt="Image placeholder" [src]="product.dataurl">
+                                    <img alt="Image placeholder" [src]="product.image">
                                   </a>
                                   <div class="media-body">
                                     <span class="mb-0 text-sm">{{product.title}}</span>
                                   </div>
                                 </div>
                               </th>
-                              <td>{{product.id_shoe}}</td>
+                              <td>{{product.id_product}}</td>
                               <td>{{product.stock}}</td>
                               <td>${{product.price}}</td>
                               <td>
-                                <span class="badge bg-danger">{{product.statuse}}</span>
+                                <span class="badge bg-danger">{{product.status}}</span>
                               </td>
                               <td>
                                 <ul class="action-list">
                                   <li><a href="./admin-add" data-tip="edit"><i class="fa fa-edit"></i></a></li>
-                                  <li><button (click)="delProduct(product.id_shoes)" id="btndelete" data-tip="delete"><i class="fa fa-trash"></i></button></li>
+                                  <li><button (click)="delProduct(product.id_product)" id="btndelete" data-tip="delete"><i class="fa fa-trash"></i></button></li>
                                 </ul>
                               </td>
                           </tr>

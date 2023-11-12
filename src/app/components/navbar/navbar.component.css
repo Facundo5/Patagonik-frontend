@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
 /*Logo Tienda*/
 .logo{
   margin-right: 100px;
 }
-
+p{
+  font-family: 'Roboto', sans-serif;
+  margin-top: 10px;
+  font-size: 20px;
+}
 /*Buscador*/
 .search{
   position: relative;

@@ -1,13 +1,16 @@
-/*Final*/ /*Descripcion del producto*/
-.g-3, .gy-3{
+/*Final*/
+/*Descripcion del producto*/
+.g-3,
+.gy-3 {
   --bs-gutter-y: 1rem;
 }
 
-.g-3, .gx-3{
+.g-3,
+.gx-3 {
   --bs-gutter-x: 1rem;
 }
 
-.row{
+.row {
   display: flex;
   flex-wrap: wrap;
   margin-top: calc(-1 * var(--bs-gutter-y));
@@ -16,15 +19,11 @@
 }
 
 /*Alineación de Elementos*/
-.card-body{
+.card-body {
   flex: 1 1 auto;
 }
-.img-wrap img{
-  height: 700px;
-  max-width: 100%;
-  width: auto;
-}
-.align-items-center{
+
+.align-items-center {
   align-items: center !important;
 }
 
@@ -38,21 +37,22 @@
   margin-left: calc(-.5 * var(--bs-gutter-x));
 }
 
-@media (min-width: 992px){
-.col-lg-6 {
+@media (min-width: 992px) {
+  .col-lg-6 {
     flex: 0 0 auto;
     width: 50%;
-}}
+  }
+}
 
 /*Detalles de los productos*/
-.product-details .product-details-image{
+.product-details .product-details-image {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px){
-  .product-details .product-details-image .product-thumb-image{
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .product-details .product-details-image .product-thumb-image {
     width: 17%;
   }
 }
@@ -63,11 +63,11 @@
 }
 
 /*Alineacion Imágenes Laterales*/
-.me-3{
+.me-3 {
   margin-right: 1rem !important;
 }
 
-.flex-column{
+.flex-column {
   flex-direction: column !important;
 }
 
@@ -87,7 +87,7 @@
 }
 
 /*Tamaño Imágen Principal*/
-.product-details .product-details-image .single-image img {
+.product-details .product-details-image .product-image .single-image img {
   width: 100%;
 }
 
@@ -120,11 +120,12 @@
 }
 
 /*Colores Responsive*/
-@media (max-width: 767px){
-.product-details .product-details-content .product-select-wrapper .select-item .color-select li {
+@media (max-width: 767px) {
+  .product-details .product-details-content .product-select-wrapper .select-item .color-select li {
     width: 25px;
     height: 25px;
-}}
+  }
+}
 
 .product-details .product-details-content .product-select-wrapper .select-item .color-select li {
   display: inline-block;
@@ -145,11 +146,12 @@
   transition: all 0.3s linear;
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1199px){
-.product-details .product-details-content .product-select-wrapper .select-item .color-select li {
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .product-details .product-details-content .product-select-wrapper .select-item .color-select li {
     width: 30px;
     height: 30px;
-}}
+  }
+}
 
 /*Separacion Final Colores*/
 .product-details .product-details-content .product-select-wrapper .select-item .color-select li+li {
@@ -179,6 +181,7 @@
 .flex-wrap {
   flex-wrap: wrap !important;
 }
+
 .d-flex {
   display: flex !important;
 }
@@ -193,26 +196,52 @@
 }
 
 /*Imágenes Laterales Responsive*/
-@media (max-width: 767px){
-.product-details .product-details-image .product-thumb-image {
+@media (max-width: 767px) {
+  .product-details .product-details-image .product-thumb-image {
     width: 17%;
-}}
+  }
+}
 
-@media (max-width: 767px){
-.product-details .product-details-image .product-thumb-image .single-thumb {
+@media (max-width: 767px) {
+  .product-details .product-details-image .product-thumb-image .single-thumb {
     margin: 3px;
-}}
+  }
+}
 
-@media (max-width: 767px){
-.product-details .product-details-image .product-thumb-image .single-thumb img {
+@media (max-width: 767px) {
+  .product-details .product-details-image .product-thumb-image .single-thumb img {
     width: 40px;
-}}
+  }
+}
 
 /*Sombra Imagen Seleccionada*/
 .product-details .product-details-image .product-thumb-image .single-thumb.active img {
   box-shadow: 2px 2px 8px rgb(0 0 0 / 32%);
   opacity: 1;
 }
+
 .upper {
   text-transform: capitalize;
+}
+
+.boton-r .boton-a {
+  margin: 5px;
+}
+
+.boton-r {
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid red;
+}
+
+.boton-a {
+  border: 1px solid green;
+}
+
+.boton-r:hover {
+  background: red;
+}
+
+.boton-a:hover {
+  background: green;
 }

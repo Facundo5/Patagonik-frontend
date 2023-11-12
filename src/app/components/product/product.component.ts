@@ -16,64 +16,79 @@ export class ProductComponent implements OnInit {
   public link: any;
   public formPurchase!: FormGroup;
 
-  constructor(private route:ActivatedRoute, private restService: RestService,public formBuilder: FormBuilder) { }
+  constructor(private route: ActivatedRoute, private restService: RestService, public formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe( (paramMap: any) => {
-      const {params} = paramMap
-      this.loadData(params.id_shoes)
-      
+    this.route.paramMap.subscribe((paramMap: any) => {
+      const { params } = paramMap
+      this.loadData(params.product)
+
     })
     this.formPurchase = this.formBuilder.group({
-      quantity: [ '1', [Validators.required]],
+      quantity: ['1', [Validators.required]],
     });
   }
 
-  loadData(id_shoes:string) {
-    this.restService.get(`http://localhost:3000/api/getproduct/${id_shoes}`)
-    .subscribe({
-      next: (res: any) => {
-        this.response = res
-        console.log(this.response)
+  loadData(product: string) {
+    this.restService.get(`http://localhost:3000/api/get-product/${product}`)
+      .subscribe({
+        next: (res: any) => {
+          const imagenes = res.image
+          function agregarTransformacion(imagenes: any) {
+            if (imagenes) {
+              const partes = imagenes.split('/upload/');
+              const parteBase = partes[0] + '/upload/c_fill,w_600,h_600/';
+              const parteImagen = partes[1];
+              return parteBase + parteImagen;
+            }
+            return imagenes; // Si la URL es vacía, devolverla sin modificaciones
+          }
 
-    }, error: (err) => {
-      console.log(err)
-      Swal.fire({
-        icon: 'error',
-        title: 'ha ocurrido un error',
-        text: 'Error al mostrar el producto'
+          // Aplicar la transformación a cada URL en el array
+          const urlsTransformadas = imagenes.map(agregarTransformacion);
+
+          // Volver a insertar las URLs modificadas en un nuevo objeto o array
+          // Dependiendo de la estructura del objeto donde quieras guardar las URLs
+          // Aquí se insertan de nuevo en un array
+          const objetoModificado = [...urlsTransformadas];
+
+          console.log(objetoModificado); // Esto mostrará el objeto con las URLs modificadas
+          res.image = objetoModificado
+          this.response = res
+          console.log(this.response)
+
+        }, error: (err) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'ha ocurrido un error',
+            text: 'Error al mostrar el producto'
+          })
+        },
       })
-    },
-      complete: () => console.log('completado')
-    })
   };
   purchaseMp() {
     const fd = new FormData;
     fd.append('quantity', this.response.quantity)
-    console.log( fd.get('quantity') );
-    console.log(this.formPurchase.value.quantity)
     const product = {
       id_size: this.response.id_size,
       id_shoes: this.response.id_shoes,
       price_product: this.response.price,
       title_product: this.response.title,
-      image_product:  this.response.dataurl[0],
+      image_product: this.response.dataurl[0],
       quantity_purchase: this.formPurchase.value.quantity
     }
     //Pasamos toda la informacion en un formData
     this.restService.post('http://localhost:3000/api/payment', product)
-    .subscribe({
-      next: (res: any) => {
-        console.log(res)
-        window.location.href = res
-      }, error: (err: any) => {
-        console.log(err)
-        Swal.fire({
-          icon: 'error',
-          title: 'ERROR',
-          text: 'Error del servidor o de su sesion'
-        })
-      },
-    })
+      .subscribe({
+        next: (res: any) => {
+          window.location.href = res
+        }, error: (err: any) => {
+          Swal.fire({
+            icon: 'error',
+            title: 'ERROR',
+            text: 'Error del servidor o de su sesion'
+          })
+        },
+      })
   }
 }

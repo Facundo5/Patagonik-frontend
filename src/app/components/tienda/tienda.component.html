@@ -9,70 +9,36 @@
 
     <!-- ===== Menu Lateral para Filtros ===== -->
     <div id="aside_filter" class="card d-lg-block mb-4 collapse">
-      <strong class="d-block py-2"> Filtrar Productos </strong>
       <!--Filtro para Marcas-->
       <article class="filter-group">
-        <header class="card-header">
-          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside_brands" aria-expanded="false">
-            <i class="icon-control fa fa-chevron-down"></i>  Marcas
-          </a>
-        </header>
-        <div class="collapse" id="collapse_aside_brands">
-          <div class="card-body">
-
-            <a href="" *ngFor="let brand of brands"><label class="checkbox-btn">
-              <input type="checkbox">
-              <span class="btn btn-light"> {{brand.name_brand}} </span>
-            </label></a> <!-- form-check end.// -->
-
-              <!-- form-check end.// -->
-          </div> <!-- card-body .// -->
-        </div> <!-- collapse.// -->
-      </article>
-
-      <article class="filter-group">
-        <header class="card-header">
-          <!--Filtro para Estilos-->
-          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside_3" aria-expanded="false">
-            <i class="icon-control fa fa-chevron-down"></i>  Estilos
-          </a>
-        </header>
-        <div class="collapse" id="collapse_aside_3">
-          <div class="card-body">
-              <label class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="">
-                <span class="form-check-label"> Deportivo </span>
-              </label> <!-- form-check end.// -->
-
-              <label class="form-check mb-2">
-                <input class="form-check-input" type="checkbox" value="">
-                <span class="form-check-label"> Urbano </span>
-              </label> <!-- form-check end.// -->
-              <!-- form-check end.// -->
-          </div> <!-- card-body .// -->
-        </div> <!-- collapse.// -->
+        <div class="ms-auto">
+          <nav>
+            <span class="category">Categorias</span>
+            
+            <ul>
+              <li><a href="#/home">Home</a></li>
+              <li>Electronica</li>
+              <li>Herramientas</li>
+              <li>Hogar</li>
+              <li>Muebles</li>
+              <li>Electrodomesticos</li>
+              <li>Videojuegos</li>
+              <li>Libros</li>
+              <li>Ropa</li>
+              <li>Joyas y accesorios</li>
+              <li>Suministros para mascota</li>
+              <li>Bebes y niños</li>
+              <li>Juguetes y juegos</li>
+              <li>Electronica e informatica</li>
+              <li>Telefonos moviles</li>
+              <li>Bicicletas</li>
+              <li>Arte y manualidades</li>
+              <li>Auto partes</li>
+              <li>Otro</li>
+            </ul>  
+          </nav>
+      </div>
       </article><!-- filter-group // -->
- <!-- filter-group // -->
-
-      <article class="filter-group">
-        <!--Filtro para Talles-->
-        <header class="card-header">
-          <a href="#" class="title collapsed" data-bs-toggle="collapse" data-bs-target="#collapse_aside3" aria-expanded="false">
-            <i class="icon-control fa fa-chevron-down"></i>  Talles
-          </a>
-        </header>
-        <div class="collapse" id="collapse_aside3">
-          <div class="card-body">
-
-              <a *ngFor="let size of sizes"><label class="checkbox-btn">
-                <input type="checkbox">
-                <span class="btn btn-light"> {{size.number}} </span>
-              </label></a>
-
-
-          </div> <!-- card-body.// -->
-        </div> <!-- collapse.// -->
-      </article>  <!-- filter-group // -->
 
     </div> <!-- card.// -->
     <!-- ===== End Menu Filtros .// ===== -->
@@ -80,33 +46,23 @@
       </aside> <!-- col .// -->
       <main class="col-lg-9">
 
-      <!--Filtro para mas recientes, etc-->
-      <header class="d-sm-flex align-items-center border-bottom mb-4 pb-3">
-        <strong class="d-block py-2"> Patagonia Style</strong>
-          <div class="ms-auto">
-            <select class="form-select d-inline-block w-auto">
-                <option value="0">Recientes</option>
-                <option value="1">Mas Barato</option>
-                <option value="2">Mas Caro</option>
-            </select><!-- btn-group end.// -->
-          </div>
-      </header>
+
 
         <div class="row">
           <!-- Contenido Tarjetas -->
           <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let card of cards">
             <figure class="card card-product-grid">
               <div class="img-wrap">
-                <img [src]="card.dataurl">
+                <img [src]="card.image">
               </div>
               <figcaption class="info-wrap border-top">
                 <div class="price-wrap">
                   <h4>{{card.title}}</h4>
-                  <p class="title mb-2">Airforce Pro</p>
+                  <!-- <p class="title mb-2">{{card.description}}</p> -->
                   <h5 class="price">${{card.price}}</h5>
                 </div>
 
-                <!--<a [routerLink]="['/','product',card?.id_shoes]" class="btn btn-primary">Ver Producto</a>-->
+                <a [routerLink]="['/','product',card?.id_product]" class="btn btn-primary">Ver Producto</a>
                 <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
               </figcaption>
             </figure>

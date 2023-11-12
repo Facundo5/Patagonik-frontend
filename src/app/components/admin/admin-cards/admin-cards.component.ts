@@ -1,31 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { RestService } from 'src/app/rest.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-tienda',
-  templateUrl: './tienda.component.html',
-  styleUrls: ['./tienda.component.css']
+  selector: 'app-admin-cards',
+  templateUrl: './admin-cards.component.html',
+  styleUrls: ['./admin-cards.component.css']
 })
-export class TiendaComponent implements OnInit {
-
+export class AdminCardsComponent {
   public cards: any = [];
-  sizes: any | undefined;
-  brands: any | undefined;
-  colours: any | undefined;
-
-  constructor(private restService: RestService) { }
+  
+  constructor (private restService: RestService) {}
 
   ngOnInit(): void {
     this.getCards();
   }
-
-
   public getCards() {
-    this.restService.get('http://localhost:3000/api/get-products')
+    this.restService.get('http://localhost:3000/api/get-products-admin')
       .subscribe({
         next: (data: any) => {
+          var str = (data[0].image)
+          const url = str.split('#', 1)
+          data[0].image = url
           this.cards = data
+          console.log(this.cards)
+          console.log
       }, error: (err) => {
         console.log(err)
         Swal.fire({

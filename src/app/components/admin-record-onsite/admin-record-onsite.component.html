@@ -12,15 +12,14 @@
                     <div class="row">
                         <!-- Grid column Titulo -->
                         <div class="col-md-12">
-                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Historial de Ventas
+                            <h2 class="pt-3 pb-4 text-center font-bold font-up deep-purple-text">Historial de productos eliminados
                             </h2>
                             <nav class="nav nav-borders">
                                 <a class="nav-link ms-0" href="./admin-p" target="__blank">Productos</a>
                                 <a class="nav-link ms-o" href="./admin-c" target="__blank">Clientes</a>
                                 <a class="nav-link" href="./admin-ro" target="__blank">Historial Ventas
                                     online</a>
-                                <a class="nav-link active" href="./admin-rp" target="__blank">Historial Ventas
-                                    presencial</a>
+                                <a class="nav-link active" href="./admin-rp" target="__blank">Historial de productos</a>
                             </nav>
                             <div class="card-header align-items-center py-5 gap-2 gap-md-5"
                                 data-select2-id="select2-data-124-0z31">
@@ -52,7 +51,7 @@
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5"
                                     data-select2-id="select2-data-123-4yxq">
                                     <!--begin::Agregar Producto-->
-                                    <a href="./admin-add" class="btn btn-primary">Crear venta</a>
+                                    <!-- <a href="./admin-add" class="btn btn-primary">Crear venta</a> -->
                                     <!--end::Agregar Producto-->
                                 </div>
                                 <!--end::Herramientas-->
@@ -66,7 +65,7 @@
                         <!--Tabla Cabecera-->
                         <thead>
                             <tr>
-                                <th>ID Venta</th>
+                                <th>Fecha</th>
                                 <th>Cliente</th>
                                 <th>Producto</th>
                                 <th>Estado</th>
@@ -79,7 +78,7 @@
                                 <td>{{record.id_purchase}}</td>
                                 <td>{{record.email}}</td>
                                 <td>{{record.title_product}}</td>
-                                <td>{{record.statuse}}</td>
+                                <td>{{record.status}}</td>
                             </tr>
                         </tbody>
                         <!--Tabla cuerpo-->

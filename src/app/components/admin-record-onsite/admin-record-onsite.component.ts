@@ -14,12 +14,12 @@ export class AdminRecordOnsiteComponent {
   constructor(private restService: RestService) { }
 
   ngOnInit(): void {
-    this.getSales();
+    this.getDeletedProducts();
   }
 
-  public getSales() {
+  public getDeletedProducts() {
     //Traemos todas las ventas que se encuentren en la base de datos
-    this.restService.get('http://localhost:3000/api/admin/salesonsite')
+    this.restService.get('http://localhost:3000/api/get-deleted-products')
       .subscribe({
         //Si viene todo bien asignamos la respuesta a products
         next: (res: any) => {

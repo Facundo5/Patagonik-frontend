@@ -38,6 +38,7 @@ export class AdminProductsComponent implements OnInit {
   }
 
   public delProduct(id_product: string) {
+    console.log(id_product)
     Swal.fire({
       title: 'Estas seguro?',
       text: "No vas a poder revertir esta accion!",
@@ -48,7 +49,7 @@ export class AdminProductsComponent implements OnInit {
       confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.restService.delete(`http://localhost:3000/api/admin/delproduct/${id_product}`)
+        this.restService.put(`http://localhost:3000/api/delete-product-dashboard-administration`, id_product)
           .subscribe({
             //Si viene todo bien asignamos la respuesta a products
             next: (res: any) => {
@@ -56,7 +57,7 @@ export class AdminProductsComponent implements OnInit {
                 'Eliminado!',
                 'El producto fue eliminado con exito.',
                 'success'
-              )
+              );
             }, error: (err) => {
               console.log(err)
               Swal.fire({

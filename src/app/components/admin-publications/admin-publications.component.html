@@ -15,9 +15,9 @@
                                         <div class="product-thumb-image">
                                             <div class="product-thumb-image-active nav flex-column nav-pills me-3"
                                                 id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                <a class="single-thumb active show" id="v-pills-one-tab" data-bs-toggle="pill"
+                                                <a class="single-thumb" id="v-pills-one-tab" data-bs-toggle="pill"
                                                     href="#v-pills-one" role="button" aria-controls="v-pills-one"
-                                                    aria-selected="true" tabindex="-1">
+                                                    aria-selected="false" tabindex="-1">
                                                     <img [src]="response.image[0]" alt="">
                                                 </a>
                                                 <a class="single-thumb" id="v-pills-two-tab" data-bs-toggle="pill"
@@ -25,7 +25,7 @@
                                                     aria-selected="false" tabindex="-1">
                                                     <img [src]="response.image[1]" alt="">
                                                 </a>
-                                                <a class="single-thumb" aria-current="page"
+                                                <a class="single-thumb active show" aria-current="page"
                                                     id="v-pills-three-tab" data-bs-toggle="pill" role="button"
                                                     href="#v-pills-three" aria-controls="v-pills-three"
                                                     aria-selected="false" tabindex="-1">
@@ -33,7 +33,7 @@
                                                 </a>
                                                 <a class="single-thumb" id="v-pills-four-tab" data-bs-toggle="pill"
                                                     href="#v-pills-four" role="button" aria-controls="v-pills-four"
-                                                    aria-selected="false" tabindex="-1">
+                                                    aria-selected="true" tabindex="-1">
                                                     <img [src]="response.image[3]" alt="">
                                                 </a>
                                                 <a class="single-thumb" id="v-pills-five-tab" data-bs-toggle="pill"
@@ -46,7 +46,7 @@
                                         <!--Imágen Principal -->
                                         <div class="product-image">
                                             <div class="product-image-active tab-content" id="v-pills-tabContent">
-                                                <a class="single-image tab-pane fade active show" id="v-pills-one" role="tabpanel"
+                                                <a class="single-image tab-pane fade" id="v-pills-one" role="tabpanel"
                                                     aria-labelledby="v-pills-one-tab">
                                                     <img [src]="response.image[0]" alt="">
                                                 </a>
@@ -54,7 +54,7 @@
                                                     aria-labelledby="v-pills-two-tab">
                                                     <img [src]="response.image[1]" alt="">
                                                 </a>
-                                                <a class="single-image tab-pane fade" id="v-pills-three"
+                                                <a class="single-image tab-pane fade active show" id="v-pills-three"
                                                     role="tabpanel" aria-labelledby="v-pills-three-tab">
                                                     <img [src]="response.image[2]" alt="">
                                                 </a>
@@ -93,31 +93,10 @@
                                             <h6 class="price-title fw-bold">Precio</h6>
                                             <p class="sale-price">$ {{response.price}} ARS</p>
                                         </div>
-                                        <!--Acotacion -->
-                                        <p>Aceptamos Mercado Pago</p>
-                                        <!--Cantidad -->
-                                        <form [formGroup]="formPurchase" (submit)="purchaseMp()">
-                                            <div class="product-btn mb-5">
-                                                <div class="d-flex flex-wrap">
-                                                    <div class="mt-2 mt-sm-0  me-1">
-                                                        <div class="input-group">
-                                                            <input type="number" formControlName="quantity"
-                                                                class="form-control"  [value]="1">
-                                                            <span class="input-group-text">{{response.quantity}}</span></div>
-                                                    </div>
-                                                    <!--Botones -->
-                                                    <button class="btn btn-primary mx-1 mt-2  mt-sm-0"><i
-                                                            class="fa-solid fa-bag-shopping"></i>Añadir al
-                                                        Carrito</button>
-                                                    <!--End Botones -->
-                                                    <div id="btnmp">
-                                                        <button type="submit"
-                                                            class="btn btn-primary mx-1 mt-2 mt-sm-0 w-sm-100"><i
-                                                                class="fa fa-shopping-cart me-1"></i>Comprar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
+                                        <div class="product-price">
+                                            <button class="btn boton-a" (click)="aceptPublication(response.id_product, response.advertiser_identifier)">ACEPTAR</button>
+                                            <button class="btn boton-r" (click)="alertPreDelete(response.id_product, response.advertiser_identifier)">RECHAZAR</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -155,7 +134,7 @@
                                         <div class="col-6">
                                             <div class="row features"><span><b>Categoria</b>:&nbsp;{{response.category}}</span></div>
                                             <div class="row features">
-                                                <!-- <span><b>Marca</b>:&nbsp;{{response.id_brand[0].name_brand}}</span> -->
+                                                <span><b>Marca</b>:&nbsp;{{response.stock}}</span>
                                             </div>
                                             <div class="row features">
                                                 <span><b>Modelo</b>:&nbsp;{{response.model}}</span></div>

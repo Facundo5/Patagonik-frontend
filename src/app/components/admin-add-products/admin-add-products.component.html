@@ -14,7 +14,67 @@
         <div class="col-xl-4 col-lg-4">
           <!-- Begin Menú Lateral  -->
           <div class="sticky-lg-top">
+            <!-- Información del Producto -->
+            <div class="card mb-3">
+              <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
+                <h6 class="mb-0 fw-bold ">Información</h6>
+              </div>
+              <div class="card-body">
+                <div class="row g-3 align-items-center">
+                  <div class="col-md-6">
+                    <label for="title" class="form-label">Titulo</label>
+                    <input type="text" [class.is-invalid]="titleInvalid" id="stock" formControlName="title"
+                      class="form-control">
+                    <small *ngIf="titleInvalid" class="text-danger">Debes ingresar un titulo</small>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="stock" class="form-label">Stock disponible</label>
+                    <input type="text" [class.is-invalid]="stockInvalid" id="stock" formControlName="stock"
+                      class="form-control">
+                    <small *ngIf="stockInvalid" class="text-danger">Debes ingresar el stock disponible</small>
+                  </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                  <div class="col-md-12">
+                    <label for="description" class="form-label">Descripcion</label>
+                    <textarea class="form-control" id="description" name="freeform"
+                      [class.is-invalid]="descriptionInvalid" formControlName="description" rows="10" cols="50"
+                      placeholder="Describa su articulo aqui"></textarea>
+                    <small *ngIf="descriptionInvalid" class="text-danger">Debes ingresar una descripcion</small>
+                  </div>
+                </div>
+                <div class="row g-3 align-items-center">
+                  <div class="col-md-12">
+                    <label for="category">Categoría:</label>
+                    <br>
+                    <select class="list-cat" id="category" name="category" name="category" formControlName="category">
+                        <option value="electronica">Electronica</option>
+                        <option value="herramientas">Herramientas</option>
+                        <option value="hogar">Hogar</option>
+                        <option value="muebles">Muebles</option>
+                        <option value="electrodomesticos">Electrodomesticos</option>
+                        <option value="videojuegos">Videojuegos</option>
+                        <option value="libros">Libros</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="joyas-accesorios">Joyas y accesorios</option>
+                        <option value="suministros-para-mascotas">Suministros para mascota</option>
+                        <option value="bebes-niños">Bebes y niños</option>
+                        <option value="juguetes-juegos">Juguetes y juegos</option>
+                        <option value="electronica-informatica">Electronica e informatica</option>
+                        <option value="telefonos-moviles">Telefonos moviles</option>
+                        <option value="bicicletas">Bicicletas</option>
+                        <option value="Arte-manualidades">Arte y manualidades</option>
+                        <option value="Auto-partes">Auto partes</option>
+                        <option value="varios">Otro</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+                    <small *ngIf="descriptionInvalid" class="text-danger">Debes ingresar una descripcion</small>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Div Price  -->
+
             <div class="card mb-3">
               <div
                 class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
@@ -108,8 +168,60 @@
         </div>
         <!-- Principal  -->
         <div class="col-xl-8 col-lg-8">
-          <!-- Información del Producto -->
+
+          <!-- <div class="card mb-3">
+            <div
+              class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+              <h6 class="m-0 fw-bold">Valor</h6>
+            </div>
+
+            <div class="card-body">
+              <div class="row g-3 align-items-center justify-content-between">
+                <div class="col-md-12">
+                  <label for="price" class="form-label">Precio</label>
+                  <div class="input-group">
+                    <input type="text" id="price" [class.is-invalid]="priceInvalid" formControlName="price"
+                      class="form-control">
+                    <span class="input-group-text">ARS</span>
+                  </div>
+                  <small *ngIf="priceInvalid" class="text-danger">Debes ingresar un precio</small>
+
+                </div>
+              </div>
+
+            </div>
+          </div> -->
+          <!-- Detalles de impuestos
           <div class="card mb-3">
+            <div
+              class="card-header py-3 d-flex justify-content-between align-items-center bg-transparent border-bottom-0">
+              <h6 class="m-0 fw-bold">Impuestos</h6>
+            </div>
+            <div class="card-body cabezera">
+              <div class="row g-3 align-items-center justify-content-between">
+                <div class="col-md-6">
+                  <label class="form-label">IVA</label>
+                  <div class="taxes">
+                    <p class="discou" id="iva"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="discount" class="form-label">Costo por venta</label>
+                  <div class="taxes">
+                    <p class="discou" id="comision"></p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="discount" class="form-label">Beneficio por venta</label>
+                  <div class="benefit" id="benefit">
+                    <p id="totalAmount"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!-- Información del Producto -->
+          <!-- <div class="card mb-3">
             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
               <h6 class="mb-0 fw-bold ">Información</h6>
             </div>
@@ -128,8 +240,15 @@
                   <small *ngIf="stockInvalid" class="text-danger">Debes ingresar el stock disponible</small>
                 </div>
               </div>
+              <div class="row g-3 align-items-center">
+                <div class="col-md-12">
+                  <label for="description" class="form-label">Descripcion</label>
+                    <textarea class="form-control" id="description" name="freeform" [class.is-invalid]="descriptionInvalid" formControlName="description" rows="10" cols="50" placeholder="Describa su articulo aqui"></textarea>
+                  <small *ngIf="descriptionInvalid" class="text-danger">Debes ingresar una descripcion</small>
+                </div>
+              </div>
             </div>
-          </div>
+          </div> -->
           <!-- Carga de Imagenes  -->
           <div class="card mb-3">
             <div class="card-header py-3 d-flex justify-content-between bg-transparent border-bottom-0">
@@ -137,15 +256,14 @@
             </div>
             <div class="card-body">
               <div class="row g-3 align-items-center">
-                <div (ngSubmit)="addShoes()" class="" form-container>
-                  <input formControlName="image" type="file" multiple [class.is-invalid]="imageInvalid"
+                <div class="" form-container>
+                  <input formControlName="image" type="file" accept=".jpg, .jpeg, .png" multiple [class.is-invalid]="imageInvalid"
                     (change)="onFileSelect($event)">
                   <div class="image-preview-container">
                     <div *ngFor="let image of selectedImages" class="image-preview">
                       <img [src]="image.url" alt="Vista previa de la imagen">
                     </div>
                   </div>
-                  <button type="submit">Subir imágenes</button>
                 </div>
                 <small *ngIf="imageInvalid" class="text-danger">Debes subir una imagen al menos</small>
               </div>

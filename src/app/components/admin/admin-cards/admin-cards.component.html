@@ -1,0 +1,96 @@
+<!-- <div class="main">
+    <ul class="cards">
+      <li class="cards_item" *ngFor="let card of cards">
+        <div class="card">
+          <div class="card_image">
+            <img [src]="card.image" alt="{{card.title}}">
+          </div>
+          <div class="card_content">
+            <h2 class="card_title">{{card.title}}</h2>
+            <p class="card_text">{{card.description}}</p>
+            <a [routerLink]="['/','admin-publication',card?.id_product]" class="btn btn-primary">Ver Producto</a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div> -->
+
+<!-- <body>
+  <div class="main">
+    <ul class="cards">
+      <li class="card" *ngFor="let card of cards">
+          <img [src]="card.image" alt="{{card.title}}">
+        <div class="card_content">
+          <h2 class="card_title">{{ card.title }}</h2>
+          <p class="card_text">{{ card.description }}</p>
+          <a [routerLink]="['/','admin-publication',card?.id_product]" class="btn btn-primary">Ver Producto</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</body> -->
+<!-- <div class="container-items">
+  <div class="item" *ngFor="let card of cards">
+    <figure>
+      <img class="img-fluid" src="{{card.image}}" alt="producto" />
+    </figure>
+    <div class="info-product">
+      <h2>{{card.title}}</h2>
+      <p class="card_text">{{ card.description }}</p>
+      <p class="price">{{card.price}}</p>
+      <a [routerLink]="['/','admin-publication',card?.id_product]" class="btn btn-primary">Ver Producto</a>
+    </div>
+  </div>
+</div> -->
+<!-- <body>
+  <h1>
+      Hello, World!
+  </h1>
+  
+  <div class="card"> 
+      
+      <img class="card-img-top" src="http://drive.google.com/uc?export=view&id=1-OAYrbpcO1mw335U2326RvWF6ySq_zny" alt="Card image cap"> 
+      
+      <div class="card-body">
+          
+          <h5 class="card-title">Card title</h5> 
+          
+          <p class="card-text">Ésta imágen es horizontal</p> 
+          
+          <a href="#" class="btn btn-primary">Go somewhere</a> 
+          
+      </div> 
+  </div>
+  
+  <div class="card" style="width: 18rem;"> 
+      
+      <img class="card-img-top" src="http://drive.google.com/uc?export=view&id=1-hXGeXs5KfDj_nO95mNJKyNdHW4npJPA" alt="Card image cap"> 
+      
+      <div class="card-body">
+          
+          <h5 class="card-title">Card title</h5> 
+          
+          <p class="card-text">Ésta imágen es vertical</p> 
+          
+          <a href="#" class="btn btn-primary">Go somewhere</a> 
+          
+      </div> 
+  </div>
+  
+  
+</body> -->
+
+<body>
+  <div class="contenedor">
+    <div class="card"  *ngFor="let card of cards">
+      <div class="card-header">
+        <img src="{{card.image}}" alt="VMW">
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">{{card.title}}</h2>
+        <p class="card-description">{{card.description}}</p>
+        <a [routerLink]="['/','admin-publication',card?.id_product]" class="btn btn-primary">Ver Producto</a>
+      </div>
+    </div>
+  </div>
+</body>

@@ -6,7 +6,7 @@
   <div class="container">
 
     <!-- Logo Página -->
-    <a class="logo" ><img src="../../../assets/patagonik texto sin fondo.png" width="20px" height="20px"></a>
+    <a class="logo" ><img src="../../../assets/logo_small_nonebackground.png" width="150px" height="50px"></a>
 
     <!-- Botón Responsivo -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +33,12 @@
           <a class="nav-link active d-flex  text-center" aria-current="page" routerLink="nosotros"><span class="small">Quienes Somos</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="contacto"><span class="small">Contactos</span></a>
+          <a class="nav-link active d-flex text-center" aria-current="page" routerLink="contacto"><span class="small">Soporte</span></a>
         </li>
     <ng-container *ngIf="!restService.loggedIn(); else loggedIn">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link active d-flex text-center" aria-current="page" routerLink="register"><span class="small">Registrarse</span></a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link active d-flex text-center" aria-current="page" routerLink="login"><span class="small">Entrar</span></a>
         </li>
@@ -53,7 +53,7 @@
             id="navbarDropdown"
             role="button"
             aria-expanded="false"
-          ><i class="fa-solid fa-bag-shopping"></i>
+          ><i class="fa-solid fa-cart-shopping"></i>
           </a>
         </li>
       </ul>

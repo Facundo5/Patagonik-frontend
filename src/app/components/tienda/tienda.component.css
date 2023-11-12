@@ -150,3 +150,13 @@ figure{
 .container {
   margin-top: 50px;
 }
+#aside_filter {
+  background-color: transparent;
+  border: 0px;
+}
+.category {
+  font-size: 20px;
+}
+li{
+  list-style: none;
+}

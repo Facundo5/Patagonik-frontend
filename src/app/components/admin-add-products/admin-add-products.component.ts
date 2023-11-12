@@ -2,7 +2,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { RestService } from './../../rest.service';
+import { RestService } from '../../rest.service';
 import Swal from 'sweetalert2';
 
 interface Image {
@@ -32,12 +32,9 @@ export class AdminAddProductsComponent implements OnInit {
 
 
 
-  constructor(public RestService: RestService, private sanitizer: DomSanitizer, private formBuilder: FormBuilder) { }
+  constructor(public RestService: RestService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    let selectedColourDiv: HTMLDivElement | null = null; // Registro del círculo seleccionado actualmente
-
-    this.getColours()
     this.priceInput = document.getElementById('price') as HTMLElement; // Asignamos un valor en el ngOnInit()
     this.priceInput.addEventListener('input', (event) => {
 
@@ -63,12 +60,11 @@ export class AdminAddProductsComponent implements OnInit {
     this.formShoes = this.formBuilder.group({
       price: ['', [Validators.required]],
       status: ['', [Validators.required]],
-      size: [null, [Validators.required]],
-      brand: [null, [Validators.required]],
       stock: ['', Validators.required],
       title: ['', Validators.required],
-      model: ['', [Validators.required]],
-      image: ['', [Validators.required]]
+      image: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      category: ['', [Validators.required]]
     })
 
   }
@@ -87,6 +83,9 @@ export class AdminAddProductsComponent implements OnInit {
   get priceInvalid() {
     return this.formShoes.get('price')?.invalid && this.formShoes.get('price')?.touched;
   }
+  get descriptionInvalid() {
+    return this.formShoes.get('description')?.invalid && this.formShoes.get('description')?.touched;
+  }
   onFileSelect(event: any): void {
     const files = event.target.files;
     for (let i = 0; i < files.length; i++) {
@@ -103,32 +102,44 @@ export class AdminAddProductsComponent implements OnInit {
 
 
     if (this.formShoes.invalid) {
+      console.log('toyaqui')
+      console.log(Object.values(this.formShoes.controls))
       return Object.values(this.formShoes.controls).forEach(control => {
         control.markAllAsTouched();
       })
     } else {
+      const token = this.RestService.getToken()
+      const datatoken = this.RestService.decodeToken(token)
       const fd = new FormData();
       fd.append('price', this.formShoes.value.price)
-      fd.append('statuse', this.formShoes.value.statuse)
-      fd.append('size', this.formShoes.value.size)
-      fd.append('brand', this.formShoes.value.brand)
+      fd.append('status', this.formShoes.value.status)
       fd.append('stock', this.formShoes.value.stock)
       fd.append('title', this.formShoes.value.title)
-      fd.append('model', this.formShoes.value.model)
-      fd.append('colour', this.formShoes.value.colour)
+      fd.append('description', this.formShoes.value.description)
+      fd.append('category', this.formShoes.value.category)
+      fd.append('id', datatoken.id)
       for (let i = 0; i < this.selectedImages.length; i++) {
         fd.append('images', this.selectedImages[i].file);
         console.log(this.selectedImages)
       }
+      console.log(datatoken.id)
       //Funcion para agregar una zapatilla
       //Pasamos toda la informacion en un formData
       this.RestService.post('http://localhost:3000/api/admin/addproduct', fd)
         .subscribe({
           next: (res: any) => {
             Swal.fire({
-              icon: 'success',
-              title: 'success',
-              text: 'Producto agregado con exito'
+              icon: 'info',
+              title: 'En revision',
+              text: 'Su publicacion esta siendo revisada, se le avisara por correo cuando se haya actualizado el estado.',
+              confirmButtonText: 'Lo entiendo!',
+              confirmButtonColor: '#3085d6',
+              allowOutsideClick: false,
+              allowEscapeKey: false
+            }).then((result) => {
+              if (result.isConfirmed) {
+                window.location.reload();
+              }
             })
           }, error: (err: any) => {
             console.log(err)
@@ -138,63 +149,46 @@ export class AdminAddProductsComponent implements OnInit {
               text: 'Error del servidor o de su sesion'
             })
           },
-          complete: () => console.log('completado')
         })
     }
   }
-  public getColours() {
-    this.RestService.get('http://localhost:3000/api/getcolours')
-      .subscribe({
-        next: (res: any) => {
-          this.colours = res
-          this.createColourDivs();
-        }, error: (err: any) => {
-          Swal.fire({
-            icon: 'error',
-            title: 'ERROR',
-            text: 'Error del servidor o de su sesion'
-          })
-        },
-        complete: () => console.log('completado')
-      })
-  }
-  createColourDivs() {
-    const colourContainer = document.getElementById('colourContainer');
-    let selectedColour: string | null = null;
-    let lastSelectedColourDiv: HTMLDivElement | null = null;
-  
-    this.colours.forEach((colour: { codeColour: string }) => {
-      const colourDiv = document.createElement('div');
-      colourDiv.classList.add('round');
-      colourDiv.style.backgroundColor = '#' + colour.codeColour;
-      colourDiv.style.width = '50px';
-      colourDiv.style.height = '50px';
-      colourDiv.style.margin = '5px';
-      colourDiv.style.borderRadius = '50px';
-      colourDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-      colourContainer!.appendChild(colourDiv);
-      colourContainer!.style.display = 'flex';
-  
-      colourDiv.addEventListener('click', () => {
-        const clickedColour = colour.codeColour;
-        console.log(clickedColour)
-  
-        if (selectedColour === clickedColour) {
-          return;
-        }
-  
-        if (lastSelectedColourDiv) {
-          lastSelectedColourDiv.style.border = '';
-          lastSelectedColourDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
-        }
-  
-        colourDiv.style.border = 'black solid 2px';
-        colourDiv.style.boxShadow = '0 0 20px rgba(0, 0, 0, 20)';
-        selectedColour = clickedColour;
-        lastSelectedColourDiv = colourDiv;
-      });
-    });
-  }
+  // createColourDivs() {
+  //   const colourContainer = document.getElementById('colourContainer');
+  //   let selectedColour: string | null = null;
+  //   let lastSelectedColourDiv: HTMLDivElement | null = null;
+
+  //   this.colours.forEach((colour: { codeColour: string }) => {
+  //     const colourDiv = document.createElement('div');
+  //     colourDiv.classList.add('round');
+  //     colourDiv.style.backgroundColor = '#' + colour.codeColour;
+  //     colourDiv.style.width = '50px';
+  //     colourDiv.style.height = '50px';
+  //     colourDiv.style.margin = '5px';
+  //     colourDiv.style.borderRadius = '50px';
+  //     colourDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+  //     colourContainer!.appendChild(colourDiv);
+  //     colourContainer!.style.display = 'flex';
+
+  //     colourDiv.addEventListener('click', () => {
+  //       const clickedColour = colour.codeColour;
+  //       console.log(clickedColour)
+
+  //       if (selectedColour === clickedColour) {
+  //         return;
+  //       }
+
+  //       if (lastSelectedColourDiv) {
+  //         lastSelectedColourDiv.style.border = '';
+  //         lastSelectedColourDiv.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.5)';
+  //       }
+
+  //       colourDiv.style.border = 'black solid 2px';
+  //       colourDiv.style.boxShadow = '0 0 20px rgba(0, 0, 0, 20)';
+  //       selectedColour = clickedColour;
+  //       lastSelectedColourDiv = colourDiv;
+  //     });
+  //   });
+  // }
 }
 
 

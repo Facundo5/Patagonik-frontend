@@ -21,6 +21,12 @@ import { CheckloginGuard } from './guards/checklogin.guard';
 import { PermissionsGuard } from './../app/guards/permissions.guard';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VerificationOfPersonComponent } from './components/verification-of-person/verification-of-person.component';
+import { VerifypostComponent } from './components/verifypost/verifypost.component';
+import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
+import { AdminCardsComponent } from './components/admin/admin-cards/admin-cards.component';
+import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
+import { SalesDashboardComponent } from './components/dashboard/sales-dashboard/sales-dashboard.component';
+import { AdminComponent } from './components/dashboard/admin/admin.component';
 
 
 
@@ -42,7 +48,7 @@ const routes: Routes = [
     path:'register', component: RegisterComponent
   },
   {
-    path: 'product/:id_shoes', component: ProductComponent
+    path: 'product/:product', component: ProductComponent
   },
   {
     path: 'tienda/product', redirectTo: 'product', pathMatch: 'full'
@@ -92,6 +98,25 @@ const routes: Routes = [
   },
   {
     path: 'person-Auth', component: VerificationOfPersonComponent
+  },
+  {
+    path: 'publications-checker', component: VerifypostComponent,
+    canActivate: [CheckloginGuard, PermissionsGuard], data: { expectedRole: 'admin' }
+  },
+  {
+    path: 'admin-publication/:product', component: AdminPublicationsComponent
+  },
+  {
+    path: 'admin-publications', component: AdminCardsComponent
+  },
+  {
+    path: 'admin/dashboard', component: DashboardAdminComponent
+  },
+  {
+    path: 'admin/dashboard-admin', component: SalesDashboardComponent
+  },
+  {
+    path: 'admin/admin', component: AdminComponent
   }
 ];
 

@@ -2,9 +2,10 @@ body {
     background: #D9D9D9;
   }
   .bg {
-    background-image: url();
+    background-image: url('../../../assets/img_auth/web_auth.png');
     background-position: center center;
     background-size: cover;
+    border-radius: 5px 0px 0px 5px; 
   }
 
   .container {

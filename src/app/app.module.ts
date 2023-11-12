@@ -33,7 +33,14 @@ import { AdminUserComponent } from './components/dashboard/admin-user/admin-user
 import { ERROR401Component } from './components/error401/error401.component';
 import { ERROR404Component } from './components/error404/error404.component';
 import { VerificationOfPersonComponent } from './components/verification-of-person/verification-of-person.component';
-
+import { VerifypostComponent } from './components/verifypost/verifypost.component';
+import { AdminPublicationsComponent } from './components/admin-publications/admin-publications.component';
+import { RouterModule } from '@angular/router';
+import { AdminCardsComponent } from './components/admin/admin-cards/admin-cards.component';
+import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -67,14 +74,22 @@ import { VerificationOfPersonComponent } from './components/verification-of-pers
     ERROR401Component,
     ERROR404Component,
     VerificationOfPersonComponent,
+    VerifypostComponent,
+    AdminPublicationsComponent,
+    AdminCardsComponent,
+    DashboardAdminComponent
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule,  ],
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTooltipModule  ],
   bootstrap: [AppComponent],
-  providers: [  // Proveedor para inyectar Quagga en el componente o servicio
+  providers: [
     {provide:HTTP_INTERCEPTORS,useClass:TokenInterceptor,multi:true}, CookieService]
 })
 export class AppModule { }
