@@ -22,7 +22,7 @@ export class TiendaComponent implements OnInit {
 
 
   public getCards() {
-    this.restService.get('http://localhost:3000/api/get-products')
+    this.restService.get('http://31.187.76.251:6870/api/get-products')
       .subscribe({
         next: (data: any) => {
           this.cards = data
