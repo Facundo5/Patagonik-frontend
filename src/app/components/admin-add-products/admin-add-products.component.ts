@@ -125,7 +125,7 @@ export class AdminAddProductsComponent implements OnInit {
       console.log(datatoken.id)
       //Funcion para agregar una zapatilla
       //Pasamos toda la informacion en un formData
-      this.RestService.post('http://localhost:3000/api/admin/addproduct', fd)
+      this.RestService.createProduct(fd)
         .subscribe({
           next: (res: any) => {
             Swal.fire({

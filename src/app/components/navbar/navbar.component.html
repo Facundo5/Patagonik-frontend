@@ -20,7 +20,7 @@
       <!-- Formulario de Busqueda -->
       <div class="search">
         <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Qué estás buscando?">
+        <input type="text" class="form-control" id="product" placeholder="Qué estás buscando?" (keydown)="search($event)">
       </div>
       <br>
 

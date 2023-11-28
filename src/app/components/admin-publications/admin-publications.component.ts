@@ -26,8 +26,8 @@ export class AdminPublicationsComponent {
     })
   }
 
-  loadData(product: string) {
-    this.restService.get(`http://localhost:3000/api/get-product/${product}`)
+  loadData(product: number) {
+    this.restService.getProductInReview(product)
       .subscribe({
         next: (data) => {
           this.response = data
@@ -65,7 +65,7 @@ export class AdminPublicationsComponent {
         );
 
         // Envia la solicitud HTTP al backend
-        this.restService.put('http://localhost:3000/api/del-product-admin', { product, id_user, razon}).subscribe({
+        this.restService.delProductInReview(product, id_user, razon).subscribe({
           next: (data) => {
             // Maneja la respuesta si es necesario
           },
@@ -88,7 +88,7 @@ export class AdminPublicationsComponent {
       cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.restService.put('http://localhost:3000/api/accept-product-admin', { product, id_user }).subscribe({
+        this.restService.acceptProductInReview(product, id_user).subscribe({
           next: (data) => {
             // Maneja la respuesta si es necesario
           },

@@ -1,0 +1,87 @@
+<!--Etiquete Principal con el fondo de la página-->
+<body class="wrapper" style="background-color:#D9D9D9;">
+
+    <section class="padding-y">
+      <div class="container">
+  
+      <div class="row">
+        <aside class="col-lg-3">
+  
+      <!-- ===== Menu Lateral para Filtros ===== -->
+      <div id="aside_filter" class="card d-lg-block mb-4 collapse">
+        <!--Filtro para Marcas-->
+        <article class="filter-group">
+          <div class="ms-auto">
+            <nav>
+              <span class="category">Categorias</span>
+              
+              <ul>
+                <li><a href="#/home">Home</a></li>
+                <li>Electronica</li>
+                <li>Herramientas</li>
+                <li>Hogar</li>
+                <li>Muebles</li>
+                <li>Electrodomesticos</li>
+                <li>Videojuegos</li>
+                <li>Libros</li>
+                <li>Ropa</li>
+                <li>Joyas y accesorios</li>
+                <li>Suministros para mascota</li>
+                <li>Bebes y niños</li>
+                <li>Juguetes y juegos</li>
+                <li>Electronica e informatica</li>
+                <li>Telefonos moviles</li>
+                <li>Bicicletas</li>
+                <li>Arte y manualidades</li>
+                <li>Auto partes</li>
+                <li>Otro</li>
+              </ul>  
+            </nav>
+        </div>
+        </article><!-- filter-group // -->
+  
+      </div> <!-- card.// -->
+      <!-- ===== End Menu Filtros .// ===== -->
+  
+        </aside> <!-- col .// -->
+        <main class="col-lg-9">
+  
+  
+  
+          <div class="row">
+            <!-- Contenido Tarjetas -->
+            <div class="col-lg-4 col-md-6 col-sm-6" *ngFor="let card of cards">
+              <figure class="card card-product-grid">
+                <div class="img-wrap">
+                  <img [src]="card.image">
+                </div>
+                <figcaption class="info-wrap border-top">
+                  <div class="price-wrap">
+                    <h4>{{card.title}}</h4>
+                    <!-- <p class="title mb-2">{{card.description}}</p> -->
+                    <h5 class="price">${{card.price}}</h5>
+                  </div>
+  
+                  <a [routerLink]="['/','product',card?.id_product]" class="btn btn-primary">Ver Producto</a>
+                  <a href="#" class="btn btn-light btn-icon"> <i class="fa fa-heart"></i> </a>
+                </figcaption>
+              </figure>
+            </div>
+          </div> <!-- card end.// -->
+  
+          <hr>
+  
+        </main>
+      </div>
+      </div>
+      </section>
+  
+          <!--Boton Flotante FAQ-->
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <div class="floating-container">
+            <a href="./faq">
+            <div class="floating-button">?</div></a>
+          </div>
+  
+  </body>
+  

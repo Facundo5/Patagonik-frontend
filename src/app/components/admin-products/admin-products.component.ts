@@ -19,7 +19,7 @@ export class AdminProductsComponent implements OnInit {
 
   public getProducts() {
     //Traemos todos los productos que se encuentren en la base de datos
-    this.restService.get('http://localhost:3000/api/admin/viewproducts')
+    this.restService.getProductsTable()
       .subscribe({
         //Si viene todo bien asignamos la respuesta a products
         next: (res: any) => {
@@ -37,7 +37,7 @@ export class AdminProductsComponent implements OnInit {
       })
   }
 
-  public delProduct(id_product: string) {
+  public delProduct(id_product: number) {
     console.log(id_product)
     Swal.fire({
       title: 'Estas seguro?',
@@ -49,7 +49,7 @@ export class AdminProductsComponent implements OnInit {
       confirmButtonText: 'Eliminar'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.restService.put(`http://localhost:3000/api/delete-product-dashboard-administration`, id_product)
+        this.restService.delProductTable(id_product)
           .subscribe({
             //Si viene todo bien asignamos la respuesta a products
             next: (res: any) => {

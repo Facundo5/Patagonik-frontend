@@ -17,7 +17,7 @@ export class AdminClientsComponent implements OnInit {
     this.getClients();
   }
   public getClients() {
-    this.restService.get('http://localhost:3000/api/admin/users')
+    this.restService.getUsersAdmin()
       .subscribe({
         next: (res: any) => {
           this.clients = res

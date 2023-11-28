@@ -29,9 +29,8 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  loadData(product: string) {
-    this.restService.get(`http://localhost:3000/api/get-product/${product}`)
-      .subscribe({
+  loadData(product: number) {
+    this.restService.getProduct(product).subscribe({
         next: (res: any) => {
           const imagenes = res.image
           function agregarTransformacion(imagenes: any) {
@@ -78,7 +77,7 @@ export class ProductComponent implements OnInit {
       quantity_purchase: this.formPurchase.value.quantity
     }
     //Pasamos toda la informacion en un formData
-    this.restService.post('http://localhost:3000/api/payment', product)
+    this.restService.postPayment(product)
       .subscribe({
         next: (res: any) => {
           window.location.href = res

@@ -18,7 +18,7 @@ export class VerifypostComponent implements OnInit {
   }
 
   public getPublications() {
-    this.restService.get('http://localhost:3000/api/getbrands')
+    this.restService.getBrands()
       .subscribe({
         next: (res: any) => {
           this.publications = res

@@ -19,7 +19,7 @@ export class AdminRecordComponent {
 
   public getSales(){
     //Traemos todas las ventas que se encuentren en la base de datos
-    this.restService.get('http://localhost:3000/api/admin/sales')
+    this.restService.getSales()
     .subscribe({
       //Si viene todo bien asignamos la respuesta a products
       next: (res: any) => {

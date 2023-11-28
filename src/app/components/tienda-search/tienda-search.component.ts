@@ -1,30 +1,34 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { RestService } from 'src/app/rest.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-admin-cards',
-  templateUrl: './admin-cards.component.html',
-  styleUrls: ['./admin-cards.component.css']
+  selector: 'app-tienda-search',
+  templateUrl: './tienda-search.component.html',
+  styleUrls: ['./tienda-search.component.css']
 })
-export class AdminCardsComponent {
-  public cards: any = [];
-  
-  constructor (private restService: RestService) {}
+export class TiendaSearchComponent {
 
+
+  public cards: any = [];
+  constructor(private restService: RestService, private route: ActivatedRoute) { }
+  
   ngOnInit(): void {
-    this.getCards();
+    this.route.paramMap.subscribe((paramMap) => {
+      const query = paramMap.get('query');
+      console.log(query);
+      this.getCards(query);
+    });
   }
-  public getCards() {
-    this.restService.getProductsInReview()
+
+
+  public getCards(query: any) {
+    console.log(query)
+    this.restService.getSearchProducts(query)
       .subscribe({
         next: (data: any) => {
-          var str = (data[0].image)
-          const url = str.split('#', 1)
-          data[0].image = url
           this.cards = data
-          console.log(this.cards)
-          console.log
       }, error: (err) => {
         console.log(err)
         Swal.fire({

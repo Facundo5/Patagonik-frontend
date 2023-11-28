@@ -27,6 +27,7 @@ import { AdminCardsComponent } from './components/admin/admin-cards/admin-cards.
 import { DashboardAdminComponent } from './components/admin/dashboard-admin/dashboard-admin.component';
 import { SalesDashboardComponent } from './components/dashboard/sales-dashboard/sales-dashboard.component';
 import { AdminComponent } from './components/dashboard/admin/admin.component';
+import { TiendaSearchComponent } from './components/tienda-search/tienda-search.component';
 
 
 
@@ -117,6 +118,9 @@ const routes: Routes = [
   },
   {
     path: 'admin/admin', component: AdminComponent
+  },
+  {
+    path:'tienda/query/:query', component: TiendaSearchComponent
   }
 ];
 

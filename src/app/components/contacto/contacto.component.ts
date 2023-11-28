@@ -24,7 +24,7 @@ export class ContactoComponent implements OnInit {
   }
 
   public newUser() {
-    this.rs.post('http://localhost:3000/api/contactus', this.contactForm.value)
+    this.rs.postContactUs(this.contactForm.value)
       .subscribe({
         next: (data: any) => {
           console.log(data)

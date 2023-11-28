@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
       })
     } else {
       console.log(this.loginForm.value)
-      this.restService.post('http://localhost:3000/api/login', this.loginForm.value)
+      this.restService.loginUser(this.loginForm.value)
         .subscribe({
           next: (data: any) => {
             console.log(data)

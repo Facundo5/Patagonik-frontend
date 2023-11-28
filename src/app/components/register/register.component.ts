@@ -67,7 +67,7 @@ export class RegisterComponent implements OnInit {
         control.markAllAsTouched();
       })
     } else {
-      this.restService.post('http://localhost:3000/api/register', this.registerForm.value)
+      this.restService.registerUser(this.registerForm.value)
         .subscribe({
           next: (data: any) => {
             console.log(data)

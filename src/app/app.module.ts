@@ -41,6 +41,7 @@ import { DashboardAdminComponent } from './components/admin/dashboard-admin/dash
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import { TiendaSearchComponent } from './components/tienda-search/tienda-search.component';
 
 
 
@@ -77,7 +78,8 @@ import { MatButtonModule } from '@angular/material/button';
     VerifypostComponent,
     AdminPublicationsComponent,
     AdminCardsComponent,
-    DashboardAdminComponent
+    DashboardAdminComponent,
+    TiendaSearchComponent
   ],
   imports: [
     RouterModule,
